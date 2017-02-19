@@ -1,0 +1,18 @@
+<!-- Example of a Tomcat configuration file for this application. -->
+<!-- The 'YOUR_MYSQL_...' items refer to a MySQL account. The given values are phony. Please change them. -->
+<!-- Assumes MySQL is running on the default port 3306. Please change if necessary. -->
+
+<!-- Maps a URL context under Tomcat to a location on your file system. Please change 'docBase': -->
+<Context docBase="C:\myname\projects\electricity" reloadable="true">
+ <Resource 
+   name="jdbc/electricity" 
+   auth="Container" 
+   type="javax.sql.DataSource" 
+   username="YOUR_MYSQL_USER_NAME_GOES_HERE"
+   password="YOUR_MYSQL_PASSWORD_GOES_HERE"
+   driverClassName="com.mysql.jdbc.Driver"
+   url="jdbc:mysql://localhost:3306/electricity?useServerPrepStmts=false"
+   maxActive="10"
+   maxIdle="5"
+ />
+</Context>

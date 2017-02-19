@@ -1,0 +1,14 @@
+#!/bin/sh
+
+/sbin/ifconfig sn0 down
+echo
+echo "IFCONFIG SN0 down done"
+echo
+/sbin/ifconfig sn1 down
+echo
+echo "IFCONFIG SN1 down done"
+echo
+/sbin/rmmod snull
+echo
+echo "RMMOD COMPLETE"
+echo

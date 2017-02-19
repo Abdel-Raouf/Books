@@ -1,0 +1,19 @@
+TRANSLATION.LOCALE_LIST {
+ SELECT Id, ShortForm, Description FROM Locale;
+}
+
+TRANSLATION.LOCALE_FETCH {
+ SELECT Id, ShortForm, Description FROM Locale WHERE Id=?
+}
+
+TRANSLATION.LOCALE_ADD {
+ INSERT INTO Locale (ShortForm, Description) VALUES(?,?) 
+}
+
+TRANSLATION.LOCALE_CHANGE {
+ UPDATE Locale SET ShortForm=?, Description=? WHERE Id=? 
+}
+
+TRANSLATION.LOCALE_DELETE {
+ DELETE FROM Locale WHERE Id=?
+}

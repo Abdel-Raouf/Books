@@ -1,0 +1,898 @@
+﻿4-Oct-2013 12:58:18 PM hirondelle.web4j.webmaster.LoggingConfigImpl tryTestMessages
+FINE: This is a test message for Logger 'hirondelle.fish'
+4-Oct-2013 12:58:18 PM hirondelle.web4j.webmaster.LoggingConfigImpl tryTestMessages
+FINE: This is a test message for Logger 'hirondelle.web4j'
+4-Oct-2013 12:58:18 PM hirondelle.web4j.webmaster.LoggingConfigImpl setup
+CONFIG: Logging to directory : 'C:\log\fish\'
+4-Oct-2013 12:58:18 PM hirondelle.web4j.webmaster.LoggingConfigImpl setup
+CONFIG: Current date-time: 2013-10-04 12:58:18.125000000 (uses your TimeSource implementation and the DefaultUserTimeZone setting in web.xml)
+4-Oct-2013 12:58:18 PM hirondelle.web4j.webmaster.LoggingConfigImpl setup
+CONFIG: Raw value of System.currentTimeMillis(): 1380902298125
+4-Oct-2013 12:58:18 PM hirondelle.web4j.webmaster.LoggingConfigImpl showLoggerLevels
+CONFIG: Logger hirondelle.fish has level FINE
+4-Oct-2013 12:58:18 PM hirondelle.web4j.webmaster.LoggingConfigImpl showLoggerLevels
+CONFIG: Logger hirondelle.web4j has level FINE
+4-Oct-2013 12:58:18 PM hirondelle.web4j.BuildImpl init
+CONFIG: ________________________ STARTUP :Initializing WEB4J Controller. Reading in settings in web.xml._________
+4-Oct-2013 12:58:18 PM hirondelle.web4j.BuildImpl useStandardOrDefaultNameSecond
+CONFIG: For items *not* specified in web.xml, searching for implementations with 'standard' name.
+4-Oct-2013 12:58:18 PM hirondelle.web4j.BuildImpl useStandardOrDefaultNameSecond
+CONFIG: If no 'standard' implementation found, then will use the WEB4J 'default' implementation.
+4-Oct-2013 12:58:18 PM hirondelle.web4j.BuildImpl buildStandardOrDefaultClass
+CONFIG: Cannot see any class named 'hirondelle.web4j.config.RequestToAction'. Will use default WEB4J implementation instead, named 'hirondelle.web4j.request.RequestParserImpl'
+4-Oct-2013 12:58:18 PM hirondelle.web4j.BuildImpl buildStandardOrDefaultClass
+CONFIG: Cannot see any class named 'hirondelle.web4j.config.AppFirewall'. Will use default WEB4J implementation instead, named 'hirondelle.web4j.security.ApplicationFirewallImpl'
+4-Oct-2013 12:58:18 PM hirondelle.web4j.BuildImpl buildStandardOrDefaultClass
+CONFIG: Cannot see any class named 'hirondelle.web4j.config.ConvertColumns'. Will use default WEB4J implementation instead, named 'hirondelle.web4j.database.ConvertColumnImpl'
+4-Oct-2013 12:58:18 PM hirondelle.web4j.BuildImpl buildStandardOrDefaultClass
+CONFIG: Cannot see any class named 'hirondelle.web4j.config.LocaleSrc'. Will use default WEB4J implementation instead, named 'hirondelle.web4j.request.LocaleSourceImpl'
+4-Oct-2013 12:58:18 PM hirondelle.web4j.BuildImpl buildStandardOrDefaultClass
+CONFIG: Cannot see any class named 'hirondelle.web4j.config.TimeZoneSrc'. Will use default WEB4J implementation instead, named 'hirondelle.web4j.request.TimeZoneSourceImpl'
+4-Oct-2013 12:58:18 PM hirondelle.web4j.BuildImpl buildStandardOrDefaultClass
+CONFIG: Cannot see any class named 'hirondelle.web4j.config.SpamDetect'. Will use default WEB4J implementation instead, named 'hirondelle.web4j.security.SpamDetectorImpl'
+4-Oct-2013 12:58:18 PM hirondelle.web4j.BuildImpl buildStandardOrDefaultClass
+CONFIG: Cannot see any class named 'hirondelle.web4j.config.Email'. Will use default WEB4J implementation instead, named 'hirondelle.web4j.webmaster.EmailerImpl'
+4-Oct-2013 12:58:18 PM hirondelle.web4j.BuildImpl buildStandardOrDefaultClass
+CONFIG: Cannot see any class named 'hirondelle.web4j.config.ConvertParams'. Will use default WEB4J implementation instead, named 'hirondelle.web4j.model.ConvertParamImpl'
+4-Oct-2013 12:58:18 PM hirondelle.web4j.BuildImpl buildStandardOrDefaultClass
+CONFIG: Cannot see any class named 'hirondelle.web4j.config.PermittedChars'. Will use default WEB4J implementation instead, named 'hirondelle.web4j.security.PermittedCharactersImpl'
+4-Oct-2013 12:58:18 PM hirondelle.web4j.BuildImpl buildStandardOrDefaultClass
+CONFIG: Cannot see any class named 'hirondelle.web4j.config.OwnerFirewall'. Will use default WEB4J implementation instead, named 'hirondelle.web4j.security.UntrustedProxyForUserIdImpl'
+4-Oct-2013 12:58:18 PM hirondelle.web4j.BuildImpl init
+CONFIG: Mapping of implementation classes : (19) {
+  'hirondelle.web4j.ApplicationInfo' = 'class hirondelle.web4j.config.AppInfo'
+  'hirondelle.web4j.database.ConnectionSource' = 'class hirondelle.web4j.config.ConnectionSrc'
+  'hirondelle.web4j.database.ConvertColumn' = 'class hirondelle.web4j.database.ConvertColumnImpl'
+  'hirondelle.web4j.model.ConvertParam' = 'class hirondelle.web4j.model.ConvertParamImpl'
+  'hirondelle.web4j.model.ConvertParamError' = 'class hirondelle.web4j.config.ConvertParamErrorImpl'
+  'hirondelle.web4j.request.DateConverter' = 'class hirondelle.web4j.config.DateConverterImpl'
+  'hirondelle.web4j.request.LocaleSource' = 'class hirondelle.web4j.request.LocaleSourceImpl'
+  'hirondelle.web4j.request.RequestParser' = 'class hirondelle.web4j.request.RequestParserImpl'
+  'hirondelle.web4j.request.TimeZoneSource' = 'class hirondelle.web4j.request.TimeZoneSourceImpl'
+  'hirondelle.web4j.security.ApplicationFirewall' = 'class hirondelle.web4j.security.ApplicationFirewallImpl'
+  'hirondelle.web4j.security.LoginTasks' = 'class hirondelle.fish.all.preferences.Login'
+  'hirondelle.web4j.security.PermittedCharacters' = 'class hirondelle.web4j.security.PermittedCharactersImpl'
+  'hirondelle.web4j.security.SpamDetector' = 'class hirondelle.web4j.security.SpamDetectorImpl'
+  'hirondelle.web4j.security.UntrustedProxyForUserId' = 'class hirondelle.web4j.security.UntrustedProxyForUserIdImpl'
+  'hirondelle.web4j.StartupTasks' = 'class hirondelle.web4j.config.Startup'
+  'hirondelle.web4j.ui.translate.Translator' = 'class hirondelle.web4j.config.TranslatorImpl'
+  'hirondelle.web4j.util.TimeSource' = 'class hirondelle.web4j.util.TimeSourceImpl'
+  'hirondelle.web4j.webmaster.Emailer' = 'class hirondelle.web4j.webmaster.EmailerImpl'
+  'hirondelle.web4j.webmaster.LoggingConfig' = 'class hirondelle.web4j.webmaster.LoggingConfigImpl'
+}
+4-Oct-2013 12:58:18 PM hirondelle.web4j.Controller displaySystemProperties
+CONFIG: System Properties (64) {
+  'awt.toolkit' = 'sun.awt.windows.WToolkit'
+  'catalina.base' = 'C:\johanley\Projects\TomcatInstance'
+  'catalina.home' = 'C:\Program Files\Tomcat6'
+  'catalina.useNaming' = 'true'
+  'common.loader' = '${catalina.home}/lib,${catalina.home}/lib/*.jar'
+  'file.encoding' = 'UTF-8'
+  'file.encoding.pkg' = 'sun.io'
+  'file.separator' = '\'
+  'java.awt.graphicsenv' = 'sun.awt.Win32GraphicsEnvironment'
+  'java.awt.printerjob' = 'sun.awt.windows.WPrinterJob'
+  'java.class.path' = '.;C:\Program Files\Java\jre7\lib\ext\QTJava.zip;C:\Program Files\Tomcat6\bin\bootstrap.jar'
+  'java.class.version' = '49.0'
+  'java.endorsed.dirs' = 'C:\Program Files\Tomcat6\endorsed'
+  'java.ext.dirs' = 'C:\jdk1.5.0\jre\lib\ext'
+  'java.home' = 'C:\jdk1.5.0\jre'
+  'java.io.tmpdir' = 'C:\johanley\Projects\TomcatInstance\temp'
+  'java.library.path' = 'C:\jdk1.5.0\bin;.;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\WinAVR\bin;C:\Program Files\WinAVR\utils\bin;C:\Ruby193\bin;C:\jdk1.7.0\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32\WBEM;C:\Program Files\Common Files\Roxio Shared\DLLShared\;C:\Program Files\cvs;C:\ant\bin;C:\Program Files\subversion\bin;C:\Program Files\JavaCC\bin;C:\Program Files\PuTTY;C:\cygwin\bin;C:\oracle\ora92\bin;C:\Program Files\MySQL\MySQL Server 5.5\bin;C:\mysql5\bin;C:\Program Files\QuickTime\QTSystem\'
+  'java.naming.factory.initial' = 'org.apache.naming.java.javaURLContextFactory'
+  'java.naming.factory.url.pkgs' = 'org.apache.naming'
+  'java.runtime.name' = 'Java(TM) 2 Runtime Environment, Standard Edition'
+  'java.runtime.version' = '1.5.0_07-b03'
+  'java.specification.name' = 'Java Platform API Specification'
+  'java.specification.vendor' = 'Sun Microsystems Inc.'
+  'java.specification.version' = '1.5'
+  'java.util.logging.config.file' = 'C:\johanley\Projects\TomcatInstance\conf\logging.properties'
+  'java.util.logging.manager' = 'org.apache.juli.ClassLoaderLogManager'
+  'java.vendor' = 'Sun Microsystems Inc.'
+  'java.vendor.url' = 'http://java.sun.com/'
+  'java.vendor.url.bug' = 'http://java.sun.com/cgi-bin/bugreport.cgi'
+  'java.version' = '1.5.0_07'
+  'java.vm.info' = 'mixed mode, sharing'
+  'java.vm.name' = 'Java HotSpot(TM) Client VM'
+  'java.vm.specification.name' = 'Java Virtual Machine Specification'
+  'java.vm.specification.vendor' = 'Sun Microsystems Inc.'
+  'java.vm.specification.version' = '1.0'
+  'java.vm.vendor' = 'Sun Microsystems Inc.'
+  'java.vm.version' = '1.5.0_07-b03'
+  'line.separator' = '
+'
+  'os.arch' = 'x86'
+  'os.name' = 'Windows XP'
+  'os.version' = '5.1'
+  'package.access' = 'sun.,org.apache.catalina.,org.apache.coyote.,org.apache.tomcat.,org.apache.jasper.,sun.beans.'
+  'package.definition' = 'sun.,java.,org.apache.catalina.,org.apache.coyote.,org.apache.tomcat.,org.apache.jasper.'
+  'path.separator' = ';'
+  'server.loader' = ''
+  'shared.loader' = ''
+  'sun.arch.data.model' = '32'
+  'sun.boot.class.path' = 'C:\jdk1.5.0\jre\lib\rt.jar;C:\jdk1.5.0\jre\lib\i18n.jar;C:\jdk1.5.0\jre\lib\sunrsasign.jar;C:\jdk1.5.0\jre\lib\jsse.jar;C:\jdk1.5.0\jre\lib\jce.jar;C:\jdk1.5.0\jre\lib\charsets.jar;C:\jdk1.5.0\jre\classes'
+  'sun.boot.library.path' = 'C:\jdk1.5.0\jre\bin'
+  'sun.cpu.endian' = 'little'
+  'sun.cpu.isalist' = ''
+  'sun.desktop' = 'windows'
+  'sun.io.unicode.encoding' = 'UnicodeLittle'
+  'sun.jnu.encoding' = 'Cp1252'
+  'sun.management.compiler' = 'HotSpot Client Compiler'
+  'sun.os.patch.level' = 'Service Pack 3'
+  'tomcat.util.buf.StringCache.byte.enabled' = 'true'
+  'user.country' = 'CA'
+  'user.dir' = 'C:\johanley\Projects\TomcatInstance'
+  'user.home' = 'C:\Documents and Settings\John'
+  'user.language' = 'en'
+  'user.name' = 'John'
+  'user.timezone' = 'America/Halifax'
+  'user.variant' = ''
+}
+4-Oct-2013 12:58:18 PM hirondelle.web4j.Controller displayConfigInfo
+CONFIG: Context Name : 'Fish and Chips Club - WEB4J Example App'
+4-Oct-2013 12:58:18 PM hirondelle.web4j.Controller displayConfigInfo
+CONFIG: Context Params : (0) {
+}
+4-Oct-2013 12:58:18 PM hirondelle.web4j.Controller displayConfigInfo
+CONFIG: Servlet Params : (39) {
+  'AccessControlDbConnectionString' = 'java:comp/env/jdbc/fish_access'
+  'AllowStringAsBuildingBlock' = 'YES'
+  'BigDecimalDisplayFormat' = '#,##0.00'
+  'BooleanFalseDisplayFormat' = '<input type='checkbox' name='false' value='false' readonly notab>'
+  'BooleanTrueDisplayFormat' = '<input type='checkbox' name='true' value='true' checked readonly notab>'
+  'CharacterEncoding' = 'UTF-8'
+  'DateTimeFormatForPassingParamsToDb' = 'YYYY-MM-DD^hh:mm:ss^YYYY-MM-DD hh:mm:ss'
+  'DecimalSeparator' = 'PERIOD'
+  'DefaultDbConnectionString' = 'java:comp/env/jdbc/fish'
+  'DefaultLocale' = 'en'
+  'DefaultUserTimeZone' = 'America/Halifax'
+  'EmptyOrNullDisplayFormat' = '-'
+  'ErrorCodeForDuplicateKey' = '1062'
+  'ErrorCodeForForeignKey' = '1216,1217,1451,1452'
+  'FetchSize' = '25'
+  'FullyValidateFileUploads' = 'ON'
+  'HasAutoGeneratedKeys' = 'true'
+  'IgnorableParamValue' = ''
+  'ImplementationFor.hirondelle.web4j.security.LoginTasks' = 'hirondelle.fish.all.preferences.Login'
+  'ImplicitMappingRemoveBasePackage' = 'hirondelle.fish'
+  'IntegerDisplayFormat' = '#,###'
+  'IsSQLPrecompilationAttempted' = 'true'
+  'LoggingDirectory' = 'C:\log\fish\'
+  'LoggingLevels' = 'hirondelle.fish.level=FINE, hirondelle.web4j.level=FINE'
+  'MailServerConfig' = 'NONE'
+  'MailServerCredentials' = 'NONE'
+  'MaxFileUploadRequestSize' = '1048576'
+  'MaxHttpRequestSize' = '51200'
+  'MaxRequestParamValueSize' = '51200'
+  'MaxRows' = '300'
+  'MinimumIntervalBetweenTroubleTickets' = '30'
+  'PoorPerformanceThreshold' = '20'
+  'SpamDetectionInFirewall' = 'OFF'
+  'SqlEditorDefaultTxIsolationLevel' = 'DATABASE_DEFAULT'
+  'SqlFetcherDefaultTxIsolationLevel' = 'DATABASE_DEFAULT'
+  'TimeZoneHint' = 'NONE'
+  'TranslationDbConnectionString' = 'java:comp/env/jdbc/fish_translation'
+  'TroubleTicketMailingList' = 'john.ohandley@pei.sympatico.ca, webmaster@javapractices.com'
+  'Webmaster' = 'john.ohandley@pei.sympatico.ca'
+}
+4-Oct-2013 12:58:18 PM hirondelle.web4j.Controller init
+FINE: System properties and first app scope items completed 472.605 ms after start.
+4-Oct-2013 12:58:18 PM hirondelle.web4j.request.RequestParameter init
+FINE: Max size of request parameter values, from web.xml : 51200
+4-Oct-2013 12:58:18 PM hirondelle.web4j.Controller displayVersionInfo
+CONFIG: Versions(7) {
+  'Application' = 'Fish And Chips Club/4.9.0.0'
+  'Java Runtime Environment (JRE)' = '1.5.0_07'
+  'Java Server Page API Version' = '2.1'
+  'Operating System' = 'Windows XP/5.1'
+  'Server' = 'Apache Tomcat/6.0.10'
+  'Servlet API Version' = '2.5'
+  'WEB4J Version' = 'WEB4J/4.9.0'
+}
+4-Oct-2013 12:58:18 PM hirondelle.web4j.Controller init
+CONFIG: Calling ConnectionSource.init(ServletConfig).
+4-Oct-2013 12:58:18 PM hirondelle.web4j.config.ConnectionSrc init
+CONFIG: Connection strings : (3) {
+  'ACCESS_CONTROL' = 'java:comp/env/jdbc/fish_access'
+  'DEFAULT' = 'java:comp/env/jdbc/fish'
+  'TRANSLATION' = 'java:comp/env/jdbc/fish_translation'
+}
+4-Oct-2013 12:58:18 PM hirondelle.web4j.Controller init
+FINE: Init of internal classes, ConnectionSource completed 528.711 ms after start.
+4-Oct-2013 12:58:18 PM hirondelle.web4j.Controller tryDatabaseInitAndStartupTasks
+CONFIG: Trying database init and startup tasks.
+4-Oct-2013 12:58:18 PM hirondelle.web4j.Controller tryDatabaseInitAndStartupTasks
+CONFIG: Attempting data layer startup tasks.
+4-Oct-2013 12:58:18 PM hirondelle.web4j.database.DbConfig initDataLayer
+FINE: Using web.xml config.
+4-Oct-2013 12:58:18 PM hirondelle.web4j.database.DbConfig logDatabaseAndDriverNames
+CONFIG: 
+  Database Id passed to ConnectionSource: DEFAULT
+  Database name: MySQL/5.5.8
+  Database driver name: MySQL-AB JDBC Driver/mysql-connector-java-5.1.14 ( Revision: ${bzr.revision-id} )
+  Database URL: jdbc:mysql://localhost:3307/fish?useServerPrepStmts=false
+  Supports scrollable ResultSets (TYPE_SCROLL_INSENSITIVE, CONCUR_READ_ONLY): true
+4-Oct-2013 12:58:18 PM hirondelle.web4j.database.DbConfig checkHealthOf
+CONFIG: Success : Database named 'DEFAULT' detected OK.
+4-Oct-2013 12:58:18 PM hirondelle.web4j.database.DbConfig queryTxIsolationLevelSupport
+CONFIG: Supports Tx Isolation Level SERIALIZABLE: true
+4-Oct-2013 12:58:18 PM hirondelle.web4j.database.DbConfig queryTxIsolationLevelSupport
+CONFIG: Supports Tx Isolation Level REPEATABLE_READ: true
+4-Oct-2013 12:58:18 PM hirondelle.web4j.database.DbConfig queryTxIsolationLevelSupport
+CONFIG: Supports Tx Isolation Level READ_COMMITTED: true (default)
+4-Oct-2013 12:58:18 PM hirondelle.web4j.database.DbConfig queryTxIsolationLevelSupport
+CONFIG: Supports Tx Isolation Level READ_UNCOMMITTED: true
+4-Oct-2013 12:58:18 PM hirondelle.web4j.database.DbConfig queryTxIsolationLevelSupport
+CONFIG: Supports Tx Isolation Level DATABASE_DEFAULT: false
+4-Oct-2013 12:58:18 PM hirondelle.web4j.database.DbConfig logDatabaseAndDriverNames
+CONFIG: 
+  Database Id passed to ConnectionSource: ACCESS_CONTROL
+  Database name: MySQL/5.5.8
+  Database driver name: MySQL-AB JDBC Driver/mysql-connector-java-5.1.14 ( Revision: ${bzr.revision-id} )
+  Database URL: jdbc:mysql://localhost:3307/fish_access
+  Supports scrollable ResultSets (TYPE_SCROLL_INSENSITIVE, CONCUR_READ_ONLY): true
+4-Oct-2013 12:58:18 PM hirondelle.web4j.database.DbConfig checkHealthOf
+CONFIG: Success : Database named 'ACCESS_CONTROL' detected OK.
+4-Oct-2013 12:58:18 PM hirondelle.web4j.database.DbConfig queryTxIsolationLevelSupport
+CONFIG: Supports Tx Isolation Level SERIALIZABLE: true
+4-Oct-2013 12:58:18 PM hirondelle.web4j.database.DbConfig queryTxIsolationLevelSupport
+CONFIG: Supports Tx Isolation Level REPEATABLE_READ: true
+4-Oct-2013 12:58:18 PM hirondelle.web4j.database.DbConfig queryTxIsolationLevelSupport
+CONFIG: Supports Tx Isolation Level READ_COMMITTED: true (default)
+4-Oct-2013 12:58:18 PM hirondelle.web4j.database.DbConfig queryTxIsolationLevelSupport
+CONFIG: Supports Tx Isolation Level READ_UNCOMMITTED: true
+4-Oct-2013 12:58:18 PM hirondelle.web4j.database.DbConfig queryTxIsolationLevelSupport
+CONFIG: Supports Tx Isolation Level DATABASE_DEFAULT: false
+4-Oct-2013 12:58:18 PM hirondelle.web4j.database.DbConfig logDatabaseAndDriverNames
+CONFIG: 
+  Database Id passed to ConnectionSource: TRANSLATION
+  Database name: MySQL/5.5.8
+  Database driver name: MySQL-AB JDBC Driver/mysql-connector-java-5.1.14 ( Revision: ${bzr.revision-id} )
+  Database URL: jdbc:mysql://localhost:3307/fish_translation
+  Supports scrollable ResultSets (TYPE_SCROLL_INSENSITIVE, CONCUR_READ_ONLY): true
+4-Oct-2013 12:58:18 PM hirondelle.web4j.database.DbConfig checkHealthOf
+CONFIG: Success : Database named 'TRANSLATION' detected OK.
+4-Oct-2013 12:58:18 PM hirondelle.web4j.database.DbConfig queryTxIsolationLevelSupport
+CONFIG: Supports Tx Isolation Level SERIALIZABLE: true
+4-Oct-2013 12:58:18 PM hirondelle.web4j.database.DbConfig queryTxIsolationLevelSupport
+CONFIG: Supports Tx Isolation Level REPEATABLE_READ: true
+4-Oct-2013 12:58:18 PM hirondelle.web4j.database.DbConfig queryTxIsolationLevelSupport
+CONFIG: Supports Tx Isolation Level READ_COMMITTED: true (default)
+4-Oct-2013 12:58:18 PM hirondelle.web4j.database.DbConfig queryTxIsolationLevelSupport
+CONFIG: Supports Tx Isolation Level READ_UNCOMMITTED: true
+4-Oct-2013 12:58:18 PM hirondelle.web4j.database.DbConfig queryTxIsolationLevelSupport
+CONFIG: Supports Tx Isolation Level DATABASE_DEFAULT: false
+4-Oct-2013 12:58:18 PM hirondelle.web4j.database.DbConfig initDataLayer
+CONFIG: *** SUCCESS : ALL DATABASES DETECTED OK! *** Num databases: 3
+4-Oct-2013 12:58:19 PM hirondelle.web4j.readconfig.ConfigReader fetchMany
+CONFIG: Desired configuration files under /WEB-INF/: (18) {
+  '/WEB-INF/classes/hirondelle/fish/access/password/password.sql'
+  '/WEB-INF/classes/hirondelle/fish/access/role/role.sql'
+  '/WEB-INF/classes/hirondelle/fish/access/user/csrf.sql'
+  '/WEB-INF/classes/hirondelle/fish/access/user/user.sql'
+  '/WEB-INF/classes/hirondelle/fish/all/preferences/preferences.sql'
+  '/WEB-INF/classes/hirondelle/fish/main/codes/code_table.sql'
+  '/WEB-INF/classes/hirondelle/fish/main/discussion/statements.sql'
+  '/WEB-INF/classes/hirondelle/fish/main/member/member.sql'
+  '/WEB-INF/classes/hirondelle/fish/main/rating/statements.sql'
+  '/WEB-INF/classes/hirondelle/fish/main/reports/reports.sql'
+  '/WEB-INF/classes/hirondelle/fish/main/resto/statements.sql'
+  '/WEB-INF/classes/hirondelle/fish/main/rsvp/statements.sql'
+  '/WEB-INF/classes/hirondelle/fish/main/search/statements.sql'
+  '/WEB-INF/classes/hirondelle/fish/main/visit/statements.sql'
+  '/WEB-INF/classes/hirondelle/fish/translate/basetext/statements.sql'
+  '/WEB-INF/classes/hirondelle/fish/translate/locale/statements.sql'
+  '/WEB-INF/classes/hirondelle/fish/translate/translation/statements.sql'
+  '/WEB-INF/classes/hirondelle/fish/translate/unknown/statements.sql'
+}
+4-Oct-2013 12:58:19 PM hirondelle.web4j.readconfig.TextBlockReader read
+FINE: Reading text block file : '/WEB-INF/classes/hirondelle/fish/access/role/role.sql'
+4-Oct-2013 12:58:19 PM hirondelle.web4j.readconfig.TextBlockReader read
+FINE: Reading text block file : '/WEB-INF/classes/hirondelle/fish/access/user/user.sql'
+4-Oct-2013 12:58:19 PM hirondelle.web4j.readconfig.TextBlockReader read
+FINE: Reading text block file : '/WEB-INF/classes/hirondelle/fish/access/user/csrf.sql'
+4-Oct-2013 12:58:19 PM hirondelle.web4j.readconfig.TextBlockReader read
+FINE: Reading text block file : '/WEB-INF/classes/hirondelle/fish/access/password/password.sql'
+4-Oct-2013 12:58:19 PM hirondelle.web4j.readconfig.TextBlockReader read
+FINE: Reading text block file : '/WEB-INF/classes/hirondelle/fish/main/search/statements.sql'
+4-Oct-2013 12:58:19 PM hirondelle.web4j.readconfig.TextBlockReader read
+FINE: Reading text block file : '/WEB-INF/classes/hirondelle/fish/main/visit/statements.sql'
+4-Oct-2013 12:58:19 PM hirondelle.web4j.readconfig.TextBlockReader read
+FINE: Reading text block file : '/WEB-INF/classes/hirondelle/fish/main/rating/statements.sql'
+4-Oct-2013 12:58:19 PM hirondelle.web4j.readconfig.TextBlockReader read
+FINE: Reading text block file : '/WEB-INF/classes/hirondelle/fish/main/member/member.sql'
+4-Oct-2013 12:58:19 PM hirondelle.web4j.readconfig.TextBlockReader read
+FINE: Reading text block file : '/WEB-INF/classes/hirondelle/fish/main/codes/code_table.sql'
+4-Oct-2013 12:58:19 PM hirondelle.web4j.readconfig.TextBlockReader read
+FINE: Reading text block file : '/WEB-INF/classes/hirondelle/fish/main/rsvp/statements.sql'
+4-Oct-2013 12:58:19 PM hirondelle.web4j.readconfig.TextBlockReader read
+FINE: Reading text block file : '/WEB-INF/classes/hirondelle/fish/main/discussion/statements.sql'
+4-Oct-2013 12:58:19 PM hirondelle.web4j.readconfig.TextBlockReader read
+FINE: Reading text block file : '/WEB-INF/classes/hirondelle/fish/main/resto/statements.sql'
+4-Oct-2013 12:58:19 PM hirondelle.web4j.readconfig.TextBlockReader read
+FINE: Reading text block file : '/WEB-INF/classes/hirondelle/fish/main/reports/reports.sql'
+4-Oct-2013 12:58:19 PM hirondelle.web4j.readconfig.TextBlockReader read
+FINE: Reading text block file : '/WEB-INF/classes/hirondelle/fish/all/preferences/preferences.sql'
+4-Oct-2013 12:58:19 PM hirondelle.web4j.readconfig.TextBlockReader read
+FINE: Reading text block file : '/WEB-INF/classes/hirondelle/fish/translate/basetext/statements.sql'
+4-Oct-2013 12:58:19 PM hirondelle.web4j.readconfig.TextBlockReader read
+FINE: Reading text block file : '/WEB-INF/classes/hirondelle/fish/translate/translation/statements.sql'
+4-Oct-2013 12:58:19 PM hirondelle.web4j.readconfig.TextBlockReader read
+FINE: Reading text block file : '/WEB-INF/classes/hirondelle/fish/translate/locale/statements.sql'
+4-Oct-2013 12:58:19 PM hirondelle.web4j.readconfig.TextBlockReader read
+FINE: Reading text block file : '/WEB-INF/classes/hirondelle/fish/translate/unknown/statements.sql'
+4-Oct-2013 12:58:19 PM hirondelle.web4j.readconfig.ConfigReader fetchMany
+CONFIG: Total number of distinct keys in configuration files : 73
+4-Oct-2013 12:58:19 PM hirondelle.web4j.readconfig.ConfigReader logKeysFromManyFiles
+CONFIG: (73) {
+  'ACCESS_CONTROL.CHANGE_PASSWORD'
+  'ACCESS_CONTROL.CHANGE_PREFERENCES'
+  'ACCESS_CONTROL.FETCH_FORM_SOURCE_ID'
+  'ACCESS_CONTROL.FETCH_PREFERENCES'
+  'ACCESS_CONTROL.RESET_PASSWORD'
+  'ACCESS_CONTROL.ROLES_ADD'
+  'ACCESS_CONTROL.ROLES_DELETE'
+  'ACCESS_CONTROL.ROLES_FETCH'
+  'ACCESS_CONTROL.ROLES_LIST'
+  'ACCESS_CONTROL.SAVE_FORM_SOURCE_ID'
+  'ACCESS_CONTROL.USER_ADD'
+  'ACCESS_CONTROL.USER_DELETE'
+  'ACCESS_CONTROL.USER_LIST'
+  'ADD_COMMENT'
+  'ADD_RESTO'
+  'CHANGE_RESTO'
+  'COUNT_ACTIVE_MEMBERS'
+  'DELETE_RESTO'
+  'FETCH_DISPOSITION_CODES'
+  'FETCH_RECENT_COMMENTS'
+  'FETCH_RESTO'
+  'FETCH_RESTO_CODES'
+  'LIST_RESTOS'
+  'MEMBER_ADD'
+  'MEMBER_CHANGE'
+  'MEMBER_DELETE'
+  'MEMBER_FETCH'
+  'MEMBER_LIST'
+  'NUM_MEMBERS_FOR_RECENT_VISITS'
+  'PARTICIPATION_PER_YEAR'
+  'RATING_CHANGE'
+  'RATING_FETCH_FOR_CHANGE'
+  'RATING_LIST'
+  'RESTO_DYNAMIC_SEARCH'
+  'RSVP_ADD'
+  'RSVP_CHANGE'
+  'RSVP_FETCH_FOR_CHANGE'
+  'RSVP_FETCH_NUM_YES'
+  'RSVP_LIST_ACTIVE_MEMBERS'
+  'RSVP_LIST_RESPONSES'
+  'TOTAL_ATTENDANCE'
+  'TRANSLATION.ADD'
+  'TRANSLATION.BASE_TEXT_ADD'
+  'TRANSLATION.BASE_TEXT_CHANGE'
+  'TRANSLATION.BASE_TEXT_DELETE'
+  'TRANSLATION.BASE_TEXT_FETCH'
+  'TRANSLATION.BASE_TEXT_LIST'
+  'TRANSLATION.CHANGE'
+  'TRANSLATION.DELETE'
+  'TRANSLATION.FETCH'
+  'TRANSLATION.FETCH_LOCALE_CODES'
+  'TRANSLATION.FETCH_TRANSLATIONS_FROM_CODER_KEYS'
+  'TRANSLATION.FETCH_TRANSLATIONS_FROM_NATURAL_LANGUAGE_KEYS_ONE'
+  'TRANSLATION.FETCH_TRANSLATIONS_FROM_NATURAL_LANGUAGE_KEYS_TWO'
+  'TRANSLATION.LIST'
+  'TRANSLATION.LOCALE_ADD'
+  'TRANSLATION.LOCALE_CHANGE'
+  'TRANSLATION.LOCALE_DELETE'
+  'TRANSLATION.LOCALE_FETCH'
+  'TRANSLATION.LOCALE_LIST'
+  'TRANSLATION.UNKNOWN_ADD'
+  'TRANSLATION.UNKNOWN_COUNT'
+  'TRANSLATION.UNKNOWN_DELETE'
+  'TRANSLATION.UNKNOWN_DELETE_ALL'
+  'TRANSLATION.UNKNOWN_LIST'
+  'VISIT_ADD'
+  'VISIT_CHANGE'
+  'VISIT_DELETE'
+  'VISIT_FETCH'
+  'VISIT_FETCH_NEXT_FUTURE'
+  'VISIT_LIST'
+  'VISITS_PER_MEMBER'
+  'VISITS_PER_RESTO'
+}
+4-Oct-2013 12:58:19 PM hirondelle.web4j.readconfig.ConfigReader fetchPublicStaticFinalFields
+CONFIG: Fetching public static final fields of class hirondelle.web4j.database.SqlId, from all concrete classes.
+4-Oct-2013 12:58:19 PM hirondelle.web4j.readconfig.ConfigReader fetchConcreteClassesThatImplement
+CONFIG: Fetching all concrete classes.
+4-Oct-2013 12:58:21 PM hirondelle.web4j.database.SqlStatement checkSqlFilesVersusSqlIdFields
+CONFIG: SqlId fields (73) {
+  'ACCESS_CONTROL.CHANGE_PASSWORD'
+  'ACCESS_CONTROL.CHANGE_PREFERENCES'
+  'ACCESS_CONTROL.FETCH_FORM_SOURCE_ID'
+  'ACCESS_CONTROL.FETCH_PREFERENCES'
+  'ACCESS_CONTROL.RESET_PASSWORD'
+  'ACCESS_CONTROL.ROLES_ADD'
+  'ACCESS_CONTROL.ROLES_DELETE'
+  'ACCESS_CONTROL.ROLES_FETCH'
+  'ACCESS_CONTROL.ROLES_LIST'
+  'ACCESS_CONTROL.SAVE_FORM_SOURCE_ID'
+  'ACCESS_CONTROL.USER_ADD'
+  'ACCESS_CONTROL.USER_DELETE'
+  'ACCESS_CONTROL.USER_LIST'
+  'ADD_COMMENT'
+  'ADD_RESTO'
+  'CHANGE_RESTO'
+  'COUNT_ACTIVE_MEMBERS'
+  'DELETE_RESTO'
+  'FETCH_DISPOSITION_CODES'
+  'FETCH_RECENT_COMMENTS'
+  'FETCH_RESTO'
+  'FETCH_RESTO_CODES'
+  'LIST_RESTOS'
+  'MEMBER_ADD'
+  'MEMBER_CHANGE'
+  'MEMBER_DELETE'
+  'MEMBER_FETCH'
+  'MEMBER_LIST'
+  'NUM_MEMBERS_FOR_RECENT_VISITS'
+  'PARTICIPATION_PER_YEAR'
+  'RATING_CHANGE'
+  'RATING_FETCH_FOR_CHANGE'
+  'RATING_LIST'
+  'RESTO_DYNAMIC_SEARCH'
+  'RSVP_ADD'
+  'RSVP_CHANGE'
+  'RSVP_FETCH_FOR_CHANGE'
+  'RSVP_FETCH_NUM_YES'
+  'RSVP_LIST_ACTIVE_MEMBERS'
+  'RSVP_LIST_RESPONSES'
+  'TOTAL_ATTENDANCE'
+  'TRANSLATION.ADD'
+  'TRANSLATION.BASE_TEXT_ADD'
+  'TRANSLATION.BASE_TEXT_CHANGE'
+  'TRANSLATION.BASE_TEXT_DELETE'
+  'TRANSLATION.BASE_TEXT_FETCH'
+  'TRANSLATION.BASE_TEXT_LIST'
+  'TRANSLATION.CHANGE'
+  'TRANSLATION.DELETE'
+  'TRANSLATION.FETCH'
+  'TRANSLATION.FETCH_LOCALE_CODES'
+  'TRANSLATION.FETCH_TRANSLATIONS_FROM_CODER_KEYS'
+  'TRANSLATION.FETCH_TRANSLATIONS_FROM_NATURAL_LANGUAGE_KEYS_ONE'
+  'TRANSLATION.FETCH_TRANSLATIONS_FROM_NATURAL_LANGUAGE_KEYS_TWO'
+  'TRANSLATION.LIST'
+  'TRANSLATION.LOCALE_ADD'
+  'TRANSLATION.LOCALE_CHANGE'
+  'TRANSLATION.LOCALE_DELETE'
+  'TRANSLATION.LOCALE_FETCH'
+  'TRANSLATION.LOCALE_LIST'
+  'TRANSLATION.UNKNOWN_ADD'
+  'TRANSLATION.UNKNOWN_COUNT'
+  'TRANSLATION.UNKNOWN_DELETE'
+  'TRANSLATION.UNKNOWN_DELETE_ALL'
+  'TRANSLATION.UNKNOWN_LIST'
+  'VISIT_ADD'
+  'VISIT_CHANGE'
+  'VISIT_DELETE'
+  'VISIT_FETCH'
+  'VISIT_FETCH_NEXT_FUTURE'
+  'VISIT_LIST'
+  'VISITS_PER_MEMBER'
+  'VISITS_PER_RESTO'
+}
+4-Oct-2013 12:58:21 PM hirondelle.web4j.database.SqlStatement checkSqlFilesVersusSqlIdFields
+CONFIG: No mismatches found between .sql files and SqlId fields.
+4-Oct-2013 12:58:21 PM hirondelle.web4j.database.SqlStatement precompileAll
+CONFIG: Attempting precompile of all SQL statements by calling Connection.prepareStatement(String). Precompilation is not supported by all drivers/databases. If not supported, then this checking is not useful. See web.xml.
+4-Oct-2013 12:58:21 PM hirondelle.web4j.database.SqlStatement precompileAll
+CONFIG: Attempted SQL precompile, and found no failure for : (73) {
+  'ACCESS_CONTROL.CHANGE_PASSWORD'
+  'ACCESS_CONTROL.CHANGE_PREFERENCES'
+  'ACCESS_CONTROL.FETCH_FORM_SOURCE_ID'
+  'ACCESS_CONTROL.FETCH_PREFERENCES'
+  'ACCESS_CONTROL.RESET_PASSWORD'
+  'ACCESS_CONTROL.ROLES_ADD'
+  'ACCESS_CONTROL.ROLES_DELETE'
+  'ACCESS_CONTROL.ROLES_FETCH'
+  'ACCESS_CONTROL.ROLES_LIST'
+  'ACCESS_CONTROL.SAVE_FORM_SOURCE_ID'
+  'ACCESS_CONTROL.USER_ADD'
+  'ACCESS_CONTROL.USER_DELETE'
+  'ACCESS_CONTROL.USER_LIST'
+  'ADD_COMMENT'
+  'ADD_RESTO'
+  'CHANGE_RESTO'
+  'COUNT_ACTIVE_MEMBERS'
+  'DELETE_RESTO'
+  'FETCH_DISPOSITION_CODES'
+  'FETCH_RECENT_COMMENTS'
+  'FETCH_RESTO'
+  'FETCH_RESTO_CODES'
+  'LIST_RESTOS'
+  'MEMBER_ADD'
+  'MEMBER_CHANGE'
+  'MEMBER_DELETE'
+  'MEMBER_FETCH'
+  'MEMBER_LIST'
+  'NUM_MEMBERS_FOR_RECENT_VISITS'
+  'PARTICIPATION_PER_YEAR'
+  'RATING_CHANGE'
+  'RATING_FETCH_FOR_CHANGE'
+  'RATING_LIST'
+  'RESTO_DYNAMIC_SEARCH'
+  'RSVP_ADD'
+  'RSVP_CHANGE'
+  'RSVP_FETCH_FOR_CHANGE'
+  'RSVP_FETCH_NUM_YES'
+  'RSVP_LIST_ACTIVE_MEMBERS'
+  'RSVP_LIST_RESPONSES'
+  'TOTAL_ATTENDANCE'
+  'TRANSLATION.ADD'
+  'TRANSLATION.BASE_TEXT_ADD'
+  'TRANSLATION.BASE_TEXT_CHANGE'
+  'TRANSLATION.BASE_TEXT_DELETE'
+  'TRANSLATION.BASE_TEXT_FETCH'
+  'TRANSLATION.BASE_TEXT_LIST'
+  'TRANSLATION.CHANGE'
+  'TRANSLATION.DELETE'
+  'TRANSLATION.FETCH'
+  'TRANSLATION.FETCH_LOCALE_CODES'
+  'TRANSLATION.FETCH_TRANSLATIONS_FROM_CODER_KEYS'
+  'TRANSLATION.FETCH_TRANSLATIONS_FROM_NATURAL_LANGUAGE_KEYS_ONE'
+  'TRANSLATION.FETCH_TRANSLATIONS_FROM_NATURAL_LANGUAGE_KEYS_TWO'
+  'TRANSLATION.LIST'
+  'TRANSLATION.LOCALE_ADD'
+  'TRANSLATION.LOCALE_CHANGE'
+  'TRANSLATION.LOCALE_DELETE'
+  'TRANSLATION.LOCALE_FETCH'
+  'TRANSLATION.LOCALE_LIST'
+  'TRANSLATION.UNKNOWN_ADD'
+  'TRANSLATION.UNKNOWN_COUNT'
+  'TRANSLATION.UNKNOWN_DELETE'
+  'TRANSLATION.UNKNOWN_DELETE_ALL'
+  'TRANSLATION.UNKNOWN_LIST'
+  'VISIT_ADD'
+  'VISIT_CHANGE'
+  'VISIT_DELETE'
+  'VISIT_FETCH'
+  'VISIT_FETCH_NEXT_FUTURE'
+  'VISIT_LIST'
+  'VISITS_PER_MEMBER'
+  'VISITS_PER_RESTO'
+}
+4-Oct-2013 12:58:21 PM hirondelle.web4j.database.DbConfig checkDbNamesInSettings
+FINE: Database names in web.xml settings are consistent with ConnectionSource.getDatabaseNames(): (1) {
+  ''
+}
+4-Oct-2013 12:58:21 PM hirondelle.web4j.Controller initDefaultImplementations
+CONFIG: Initializing web4j default implementations.
+4-Oct-2013 12:58:21 PM hirondelle.web4j.model.ConvertParamImpl init
+FINE: Supported Classes : (16) {
+  'boolean'
+  'class hirondelle.web4j.model.DateTime'
+  'class hirondelle.web4j.model.Decimal'
+  'class hirondelle.web4j.model.Id'
+  'class hirondelle.web4j.security.SafeText'
+  'class java.lang.Boolean'
+  'class java.lang.Integer'
+  'class java.lang.Long'
+  'class java.lang.String'
+  'class java.math.BigDecimal'
+  'class java.util.Date'
+  'class java.util.Locale'
+  'class java.util.TimeZone'
+  'class sun.util.calendar.ZoneInfo'
+  'int'
+  'long'
+}
+4-Oct-2013 12:58:21 PM hirondelle.web4j.webmaster.EmailerImpl init
+FINE: Configured Webmaster : john.ohandley@pei.sympatico.ca
+4-Oct-2013 12:58:21 PM hirondelle.web4j.webmaster.EmailerImpl init
+FINE: Configured MailServerConfig : NONE
+4-Oct-2013 12:58:21 PM hirondelle.web4j.readconfig.ConfigReader fetchPublicStaticFinalFields
+CONFIG: Fetching public static final fields of class hirondelle.web4j.request.RequestParameter, from concrete classes that implement interface hirondelle.web4j.action.Action
+4-Oct-2013 12:58:21 PM hirondelle.web4j.readconfig.ConfigReader fetchConcreteClassesThatImplement
+CONFIG: Fetching concrete classes that implement interface hirondelle.web4j.action.Action
+4-Oct-2013 12:58:21 PM hirondelle.web4j.security.ApplicationFirewallImpl mapActionsToExpectedParams
+CONFIG: Expected Request Parameters per Web Action.(39) {
+  'class hirondelle.fish.access.password.ResetPasswordAction' = (2) {
+    'Name:Operation Regex:(Show|Apply)'
+    'Name:UserName Regex:(.){0,51200}'
+  }
+  'class hirondelle.fish.access.role.RoleAction' = (3) {
+    'Name:Operation Regex:(List|Add|FetchForChange|Change|Delete)'
+    'Name:Roles Regex:(user-general|user-president|webmaster|translator|access-control)'
+    'Name:UserName Regex:(.){0,51200}'
+  }
+  'class hirondelle.fish.access.user.UserAction' = (2) {
+    'Name:Name Regex:(.){0,51200}'
+    'Name:Operation Regex:(List|Add|FetchForChange|Change|Delete)'
+  }
+  'class hirondelle.fish.all.logoff.LogoffAction' = (0) {
+  }
+  'class hirondelle.fish.all.password.ChangePasswordAction' = (5) {
+    'Name:Confirm New Password Regex:(.){0,51200}'
+    'Name:New Password Regex:(.){0,51200}'
+    'Name:Old Password Regex:(.){0,51200}'
+    'Name:Operation Regex:(Show|Apply)'
+    'Name:UserName Regex:(.){0,51200}'
+  }
+  'class hirondelle.fish.all.preferences.PreferencesAction' = (2) {
+    'Name:Locale Regex:(.){0,51200}'
+    'Name:Operation Regex:(Show|Apply)'
+  }
+  'class hirondelle.fish.exercise.binary.ServeBinaryAction' = (0) {
+  }
+  'class hirondelle.fish.exercise.encoding.EncodingAction' = (1) {
+    'Name:Test Regex:(.){0,51200}'
+  }
+  'class hirondelle.fish.exercise.fileupload.ImageUploadAction' = (3) {
+    'Name:Description Regex:(.){0,51200}'
+    'Name:Operation Regex:(Show|Apply)'
+    'Name[File Upload]: ImageFile'
+  }
+  'class hirondelle.fish.exercise.html5.PersonAction' = (10) {
+    'Name:Born Regex:(.){0,51200}'
+    'Name:Color Regex:(.){0,51200}'
+    'Name:Email Regex:(.){0,51200}'
+    'Name:Id Regex:(.){0,51200}'
+    'Name:Name Regex:(.){0,51200}'
+    'Name:Operation Regex:(List|Add|FetchForChange|Change|Delete)'
+    'Name:Phone Regex:(.){0,51200}'
+    'Name:Rating Regex:(.){0,51200}'
+    'Name:Website Regex:(.){0,51200}'
+    'Name:Weight Regex:(.){0,51200}'
+  }
+  'class hirondelle.fish.exercise.multivalued.ToppingsAction' = (7) {
+    'Name:Age Regex:(.){0,51200}'
+    'Name:Artists Regex:(.){0,51200}'
+    'Name:Birth Date Regex:(.){0,51200}'
+    'Name:Desired Salary Regex:(.){0,51200}'
+    'Name:Operation Regex:(Show|Apply)'
+    'Name:Pizza Toppings Regex:(.){0,51200}'
+    'Name:TempFile Regex:(.){0,51200}'
+  }
+  'class hirondelle.fish.help.ShowHelpAction' = (1) {
+    'Name:OriginalURI Regex:(.){0,51200}'
+  }
+  'class hirondelle.fish.main.discussion.CommentAction' = (4) {
+    'Name:Comment Body Regex:(.){0,51200}'
+    'Name:Operation Regex:(Show|Apply)'
+    'Name:PageIndex Regex:(\d){1,4}'
+    'Name:PageSize Regex:(\d){1,4}'
+  }
+  'class hirondelle.fish.main.home.HomePageAction' = (0) {
+  }
+  'class hirondelle.fish.main.member.MemberAction' = (5) {
+    'Name:Disposition Regex:(\d)+'
+    'Name:Id Regex:(.){0,51200}'
+    'Name:IsActive Regex:(.){0,51200}'
+    'Name:Name Regex:(.){0,51200}'
+    'Name:Operation Regex:(List|Add|FetchForChange|Change|Delete)'
+  }
+  'class hirondelle.fish.main.rating.RatingAction' = (8) {
+    'Name:BeerRating Regex:(0|1|2|3|4|5|6|7|8|9|10)'
+    'Name:ChipsRating Regex:(0|1|2|3|4|5|6|7|8|9|10)'
+    'Name:FishRating Regex:(0|1|2|3|4|5|6|7|8|9|10)'
+    'Name:Id Regex:(.){0,51200}'
+    'Name:LocationRating Regex:(0|1|2|3|4|5|6|7|8|9|10)'
+    'Name:Operation Regex:(List|Add|FetchForChange|Change|Delete)'
+    'Name:PriceRating Regex:(0|1|2|3|4|5|6|7|8|9|10)'
+    'Name:ServiceRating Regex:(0|1|2|3|4|5|6|7|8|9|10)'
+  }
+  'class hirondelle.fish.main.reports.Report1Action' = (2) {
+    'Name:Order Regex:(ASC|DESC)'
+    'Name:SortOn Regex:(1|2|3|4|5|6|7|8|9|10)'
+  }
+  'class hirondelle.fish.main.reports.Report2Action' = (2) {
+    'Name:Order Regex:(ASC|DESC)'
+    'Name:SortOn Regex:(1|2|3|4|5|6|7|8|9|10)'
+  }
+  'class hirondelle.fish.main.reports.Report3Action' = (2) {
+    'Name:Order Regex:(ASC|DESC)'
+    'Name:SortOn Regex:(1|2|3|4|5|6|7|8|9|10)'
+  }
+  'class hirondelle.fish.main.reports.Report4Action' = (2) {
+    'Name:Order Regex:(ASC|DESC)'
+    'Name:SortOn Regex:(1|2|3|4|5|6|7|8|9|10)'
+  }
+  'class hirondelle.fish.main.resto.RestoAction' = (6) {
+    'Name:Comment Regex:(.){0,51200}'
+    'Name:Id Regex:(.){0,51200}'
+    'Name:Location Regex:(.){0,51200}'
+    'Name:Name Regex:(.){0,51200}'
+    'Name:Operation Regex:(List|Add|FetchForChange|Change|Delete)'
+    'Name:Price Regex:(.){0,51200}'
+  }
+  'class hirondelle.fish.main.rsvp.RsvpAdd' = (4) {
+    'Name:MemberId Regex:(.){0,51200}'
+    'Name:Operation Regex:(Show|Apply)'
+    'Name:Response Regex:(.){0,51200}'
+    'Name:VisitId Regex:(.){0,51200}'
+  }
+  'class hirondelle.fish.main.rsvp.RsvpShow' = (0) {
+  }
+  'class hirondelle.fish.main.rsvp.RsvpUpdate' = (4) {
+    'Name:MemberId Regex:(.){0,51200}'
+    'Name:Operation Regex:(Show|Apply)'
+    'Name:Response Regex:(.){0,51200}'
+    'Name:VisitId Regex:(.){0,51200}'
+  }
+  'class hirondelle.fish.main.search.RestoSearchAction' = (6) {
+    'Name:Maximum Price Regex:(.){0,51200}'
+    'Name:Minimum Price Regex:(.){0,51200}'
+    'Name:Operation Regex:(Show|Search)'
+    'Name:Order By Regex:(.){0,51200}'
+    'Name:Reverse Sort Regex:(true)'
+    'Name:Starts With Regex:(.){0,51200}'
+  }
+  'class hirondelle.fish.main.visit.VisitAction' = (7) {
+    'Name:Id Regex:(.){0,51200}'
+    'Name:Lunch Date Regex:(.){0,51200}'
+    'Name:Message Regex:(.){0,51200}'
+    'Name:Operation Regex:(List|Add|FetchForChange|Change|Delete)'
+    'Name:Order Regex:(ASC|DESC)'
+    'Name:Restaurant Regex:(.){0,51200}'
+    'Name:SortOn Regex:(Resto\.Name|LunchDate|Message)'
+  }
+  'class hirondelle.fish.translate.basetext.BaseTextAction' = (4) {
+    'Name:Base Text Regex:(.){0,51200}'
+    'Name:Id Regex:(.){0,51200}'
+    'Name:Is Coder Key Regex:(.){0,51200}'
+    'Name:Operation Regex:(List|Add|FetchForChange|Change|Delete)'
+  }
+  'class hirondelle.fish.translate.locale.SupportedLocaleAction' = (4) {
+    'Name:Description Regex:(.){0,51200}'
+    'Name:Id Regex:(.){0,51200}'
+    'Name:Operation Regex:(List|Add|FetchForChange|Change|Delete)'
+    'Name:Short Form Regex:(.){0,51200}'
+  }
+  'class hirondelle.fish.translate.refresh.RefreshTranslations' = (1) {
+    'Name:Operation Regex:(Show|Apply)'
+  }
+  'class hirondelle.fish.translate.translation.TranslationEdit' = (4) {
+    'Name:BaseTextId Regex:(.){0,51200}'
+    'Name:LocaleId Regex:(.){0,51200}'
+    'Name:Operation Regex:(List|Add|FetchForChange|Change|Delete)'
+    'Name:Translation Regex:(.){0,51200}'
+  }
+  'class hirondelle.fish.translate.translation.TranslationsList' = (0) {
+  }
+  'class hirondelle.fish.translate.unknown.UnknownBaseTextEdit' = (4) {
+    'Name:BaseText Regex:(.){0,51200}'
+    'Name:Id Regex:(.){0,51200}'
+    'Name:IsCoderKey Regex:(.){0,51200}'
+    'Name:Operation Regex:(List|Add|FetchForChange|Change|Delete)'
+  }
+  'class hirondelle.fish.translate.unknown.UnknownBaseTextRecorder' = (1) {
+    'Name:Operation Regex:(Start|Stop)'
+  }
+  'class hirondelle.fish.webmaster.diagnostics.ClearTroubleTicket' = (0) {
+  }
+  'class hirondelle.fish.webmaster.diagnostics.ShowDiagnostics' = (0) {
+  }
+  'class hirondelle.fish.webmaster.logging.EditLoggerLevels' = (3) {
+    'Name:Level Regex:(ALL|INHERIT FROM PARENT|SEVERE|WARNING|INFO|CONFIG|FINE|FINER|FINEST|OFF)'
+    'Name:Name Regex:(.){0,51200}'
+    'Name:Operation Regex:(List|Add|FetchForChange|Change|Delete)'
+  }
+  'class hirondelle.fish.webmaster.performance.ShowPerformance' = (0) {
+  }
+  'class hirondelle.fish.webmaster.ping.Ping' = (0) {
+  }
+  'class hirondelle.fish.webmaster.testfailure.ForceFailure' = (0) {
+  }
+}
+4-Oct-2013 12:58:22 PM hirondelle.web4j.security.UntrustedProxyForUserIdImpl init
+CONFIG: No ownership constraints have been set in web.xml. No init-param named 'UntrustedProxyForUserId'
+4-Oct-2013 12:58:22 PM hirondelle.web4j.readconfig.ConfigReader fetchConcreteClassesThatImplement
+CONFIG: Fetching concrete classes that implement interface hirondelle.web4j.action.Action
+4-Oct-2013 12:58:22 PM hirondelle.web4j.request.RequestParserImpl initWebActionMappings
+CONFIG: URI Mappings : (39) {
+  '/access/password/ResetPasswordAction' = '*****'
+  '/access/role/RoleAction' = 'class hirondelle.fish.access.role.RoleAction'
+  '/access/user/UserAction' = 'class hirondelle.fish.access.user.UserAction'
+  '/all/logoff/LogoffAction' = 'class hirondelle.fish.all.logoff.LogoffAction'
+  '/all/password/ChangePasswordAction' = '*****'
+  '/all/preferences/PreferencesAction' = 'class hirondelle.fish.all.preferences.PreferencesAction'
+  '/exercise/binary/ServeBinaryAction' = 'class hirondelle.fish.exercise.binary.ServeBinaryAction'
+  '/exercise/encoding/EncodingAction' = 'class hirondelle.fish.exercise.encoding.EncodingAction'
+  '/exercise/fileupload/ImageUploadAction' = 'class hirondelle.fish.exercise.fileupload.ImageUploadAction'
+  '/exercise/html5/PersonAction' = 'class hirondelle.fish.exercise.html5.PersonAction'
+  '/exercise/multivalued/ToppingsAction' = 'class hirondelle.fish.exercise.multivalued.ToppingsAction'
+  '/help/ShowHelpAction' = 'class hirondelle.fish.help.ShowHelpAction'
+  '/main/discussion/CommentAction' = 'class hirondelle.fish.main.discussion.CommentAction'
+  '/main/home/HomePageAction' = 'class hirondelle.fish.main.home.HomePageAction'
+  '/main/member/MemberAction' = 'class hirondelle.fish.main.member.MemberAction'
+  '/main/rating/RatingAction' = 'class hirondelle.fish.main.rating.RatingAction'
+  '/main/reports/Report1Action' = 'class hirondelle.fish.main.reports.Report1Action'
+  '/main/reports/Report2Action' = 'class hirondelle.fish.main.reports.Report2Action'
+  '/main/reports/Report3Action' = 'class hirondelle.fish.main.reports.Report3Action'
+  '/main/reports/Report4Action' = 'class hirondelle.fish.main.reports.Report4Action'
+  '/main/resto/RestoAction' = 'class hirondelle.fish.main.resto.RestoAction'
+  '/main/rsvp/RsvpAdd' = 'class hirondelle.fish.main.rsvp.RsvpAdd'
+  '/main/rsvp/RsvpShow' = 'class hirondelle.fish.main.rsvp.RsvpShow'
+  '/main/rsvp/RsvpUpdate' = 'class hirondelle.fish.main.rsvp.RsvpUpdate'
+  '/main/search/RestoSearchAction' = 'class hirondelle.fish.main.search.RestoSearchAction'
+  '/main/visit/VisitAction' = 'class hirondelle.fish.main.visit.VisitAction'
+  '/translate/basetext/BaseTextEdit' = 'class hirondelle.fish.translate.basetext.BaseTextAction'
+  '/translate/locale/SupportedLocaleAction' = 'class hirondelle.fish.translate.locale.SupportedLocaleAction'
+  '/translate/refresh/RefreshTranslations' = 'class hirondelle.fish.translate.refresh.RefreshTranslations'
+  '/translate/translation/TranslationEdit' = 'class hirondelle.fish.translate.translation.TranslationEdit'
+  '/translate/translation/TranslationsList' = 'class hirondelle.fish.translate.translation.TranslationsList'
+  '/translate/unknown/UnknownBaseTextEdit' = 'class hirondelle.fish.translate.unknown.UnknownBaseTextEdit'
+  '/translate/unknown/UnknownBaseTextRecorder' = 'class hirondelle.fish.translate.unknown.UnknownBaseTextRecorder'
+  '/webmaster/diagnostics/ClearTroubleTicket' = 'class hirondelle.fish.webmaster.diagnostics.ClearTroubleTicket'
+  '/webmaster/diagnostics/ShowDiagnostics' = 'class hirondelle.fish.webmaster.diagnostics.ShowDiagnostics'
+  '/webmaster/logging/EditLoggerLevels' = 'class hirondelle.fish.webmaster.logging.EditLoggerLevels'
+  '/webmaster/performance/ShowPerformance' = 'class hirondelle.fish.webmaster.performance.ShowPerformance'
+  '/webmaster/ping/Ping' = 'class hirondelle.fish.webmaster.ping.Ping'
+  '/webmaster/testfailure/ForceFailure' = 'class hirondelle.fish.webmaster.testfailure.ForceFailure'
+}
+4-Oct-2013 12:58:22 PM hirondelle.web4j.Controller startTasksWithNoDb
+CONFIG: Startup tasks not needing a database.
+4-Oct-2013 12:58:22 PM hirondelle.web4j.config.Startup checkForVersionMismatch
+CONFIG: Version of Fish & Chips Club (4.9.0.0) compatible with that of web4j.jar (4.9.0)
+4-Oct-2013 12:58:22 PM hirondelle.web4j.Controller tryDatabaseInitAndStartupTasks
+CONFIG: Startup tasks for database: DEFAULT
+4-Oct-2013 12:58:22 PM hirondelle.fish.main.codes.CodeTableUtil init
+FINE: Fetching code tables.
+4-Oct-2013 12:58:22 PM hirondelle.fish.main.codes.CodeTableUtil fetchAndRememberCodeTable
+FINE: Code Table 'RESTAURANTS': (3) {
+  '1' = 'Cedars'
+  '2' = 'The Globe'
+  '3' = 'Johnny&#039;s Place'
+}
+4-Oct-2013 12:58:22 PM hirondelle.fish.main.codes.CodeTableUtil fetchAndRememberCodeTable
+FINE: Code Table 'SUPPORTED_LOCALES': (2) {
+  '1' = 'en'
+  '2' = 'fr'
+}
+4-Oct-2013 12:58:22 PM hirondelle.fish.main.codes.CodeTableUtil fetchAndRememberCodeTable
+FINE: Code Table 'RATINGS': (11) {
+  '0' = '0'
+  '1' = '1'
+  '10' = '10'
+  '2' = '2'
+  '3' = '3'
+  '4' = '4'
+  '5' = '5'
+  '6' = '6'
+  '7' = '7'
+  '8' = '8'
+  '9' = '9'
+}
+4-Oct-2013 12:58:22 PM hirondelle.fish.main.codes.CodeTableUtil fetchAndRememberCodeTable
+FINE: Code Table 'DISPOSITIONS': (8) {
+  '1' = 'Sunny'
+  '2' = 'Grumpy'
+  '3' = 'Class Clown'
+  '4' = 'Fluffy&#047;Bouncy'
+  '5' = 'Unflinchingly Neutral'
+  '6' = 'Unpredictable If Cornered'
+  '7' = 'Annoyingly Positive'
+  '8' = 'Positively Annoying'
+}
+4-Oct-2013 12:58:22 PM hirondelle.web4j.Controller tryDatabaseInitAndStartupTasks
+CONFIG: Startup tasks for database: ACCESS_CONTROL
+4-Oct-2013 12:58:22 PM hirondelle.web4j.Controller tryDatabaseInitAndStartupTasks
+CONFIG: Startup tasks for database: TRANSLATION
+4-Oct-2013 12:58:22 PM hirondelle.web4j.config.Startup startApplication
+FINE: Reading Translations.
+4-Oct-2013 12:58:22 PM hirondelle.web4j.config.TranslatorImpl startRecordingUnknowns
+FINE: Starting to record Unknown Base Text in memory, for later persistence.
+4-Oct-2013 12:58:22 PM hirondelle.web4j.Controller init
+FINE: Database init and startup tasks 4723.848 ms after start.
+4-Oct-2013 12:58:22 PM hirondelle.web4j.CheckModelObjects performChecks
+CONFIG: Performing checks on Model Objects for Cross-Site Scripting vulnerabilities and unsupported constructor arguments.
+4-Oct-2013 12:58:22 PM hirondelle.web4j.readconfig.ConfigReader fetchConcreteClassesThatImplement
+CONFIG: Fetching all concrete classes.
+4-Oct-2013 12:58:23 PM hirondelle.web4j.CheckModelObjects scanForUnsupportedCtorArgs
+WARNING: Model Object: class hirondelle.fish.access.role.UserRole. Constructor has argument not supported by ConvertParam: interface java.util.List
+4-Oct-2013 12:58:23 PM hirondelle.web4j.CheckModelObjects logResults
+CONFIG: ** SUCCESS *** : Scanned Model Objects for Cross-Site Scripting vulnerabilities. Found 0 incidents.
+4-Oct-2013 12:58:23 PM hirondelle.web4j.CheckModelObjects logResults
+WARNING: Scanned Model Objects for unsupported constructor arguments. Found 1 incident(s).
+4-Oct-2013 12:58:23 PM hirondelle.web4j.Controller init
+FINE: Cross-Site Scripting scan completed 5099.890 ms after start.
+4-Oct-2013 12:58:23 PM hirondelle.web4j.Controller init
+CONFIG: *** SUCCESS : STARTUP COMPLETED SUCCESSFULLY for Fish And Chips Club 4.9.0.0. Total startup time : 5099.890 ms

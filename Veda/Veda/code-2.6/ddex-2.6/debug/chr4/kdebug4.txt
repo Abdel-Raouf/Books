@@ -1,0 +1,233 @@
+
+
+
+Example 4. The "test4" program freezes.
+
+The "test4" program doesn't respond to signals, and it cannot be stopped
+or interrupted by the control terminal. As usual, we can collect information
+about the process using the "ps" command:
+
+$ ps u -C test4
+USER       PID %CPU %MEM   VSZ  RSS TTY    STAT START   TIME COMMAND
+root     232 99.4  0.1  1204  324 pts/1    R    11:08   2:28 ./test4
+
+The "R" status flag means that the process is running.
+
+The "ps" command doesn't tell us whether the process is running in Kernel
+Mode or in User Mode. However, we can deduce that the process is freezed in
+Kernel Mode from the fact that it is not killed even by SIGKILL signals. The
+kernel checks whether a process has pending signals right before returning in
+User Mode. Thus, the problem seems to be that "test4" keeps running in
+Kernel Mode: it looks like a kernel bug.
+
+
+$strace -p 232
+[no output]
+
+Nothing appears: this means that the process is not entering or exiting
+system calls, as we suspected.
+
+$ ps -o pid,eip,esp -C test4
+  PID      EIP      ESP
+  232 400e0004 bffff95c
+
+$ ls -l /proc/232/
+total 0
+-r--r--r--  1 cesati  users  0 Jan 15 11:47 cmdline
+lrwxrwxrwx  1 cesati  users  0 Jan 15 11:47 cwd -> /root/debugging
+-r--------  1 cesati  users  0 Jan 15 11:47 environ
+lrwxrwxrwx  1 cesati  users  0 Jan 15 11:47 exe -> /root/debugging/test4
+dr-x------  2 cesati  users  0 Jan 15 11:47 fd
+-r--r--r--  1 cesati  users  0 Jan 15 11:47 maps
+-rw-------  1 cesati  users  0 Jan 15 11:47 mem
+lrwxrwxrwx  1 cesati  users  0 Jan 15 11:47 root -> /
+-r--r--r--  1 cesati  users  0 Jan 15 11:47 stat
+-r--r--r--  1 cesati  users  0 Jan 15 11:47 statm
+-r--r--r--  1 cesati  users  0 Jan 15 11:47 status
+
+The "stat" virtual file yields lots of data (the proc(5) manual page provides
+a description of any field returned by the "stat" file):
+
+$ cat /proc/232/stat
+232 (test4) R 203 232 203 34817 232 0 14 0 82 0 0 283053 0 0 17 0 0 0
+122207 1232896 81 4294967295 134512640 134514112 3221224048 3221223772
+1074659332 262402 0 0 0 0 0 0 17 0
+
+The "ps" command extracts the contents of the eip and esp registers from
+here. (Notice that decimal 1074659332 corresponds to hex 0x400e0004, and that
+decimal 3221223772 corresponds to hex 0xbffff95c.) In general, however, these
+values refer to the contents of the registers as saved in the Kernel Mode
+stack when the process switched from User Mode to Kernel Mode. They say
+nothing about what the process is currently doing in Kernel Mode.
+
+However, we can determine from the eip and esp registers returned by "ps"
+what kind of system call has been issued by the process before the freeze.
+We must establish a mapping between the User Mode linear addresses and the
+source code of the program. To do this, we can just read the "maps" virtual
+file of the /proc/232 directory:
+
+$ cat /proc/232/maps
+08048000-08049000 r-xp 00000000 03:05 295144     /root/debugging/test4
+08049000-0804a000 rw-p 00000000 03:05 295144     /root/debugging/test4
+40000000-40015000 r-xp 00000000 03:05 749242     /lib/ld-2.2.3.so
+40015000-40016000 rw-p 00014000 03:05 749242     /lib/ld-2.2.3.so
+40016000-40017000 rw-p 00000000 00:00 0
+40021000-40128000 r-xp 00000000 03:05 749247     /lib/libc-2.2.3.so
+40128000-4012f000 rw-p 00106000 03:05 749247     /lib/libc-2.2.3.so
+4012f000-40133000 rw-p 00000000 00:00 0
+bfffe000-c0000000 rwxp fffff000 00:00 0
+
+As you see, several regions of the User Mode linear address space map all
+sections of both the program and the shared libraries used by the program.
+Executable code sections are marked as "r-xp", while data sections are
+marked as "rw-p". The last region marked as "rwxp" maps the User Mode stack.
+
+It turns out that the 0x400e0004 falls inside the region mapping the
+executable code of the C library. As usual, we can compute the offset inside
+the region (0x400e0004-0x40021000=0xbf004=782340), and thus derive the
+offset inside the executable file /lib/libc-2.2.3.so (we should add the
+file offset where the mapping starts, 0 in this case).
+Now, we can disassemble the C library executable file:
+
+$ objdump -d --start-address=0xbeff0 /lib/libc.2.2.3.so
+00000000000beff0 <__libc_read>:
+   beff0:       53                      push   %ebx
+   beff1:       8b 54 24 10             mov    0x10(%esp,1),%edx
+   beff5:       8b 4c 24 0c             mov    0xc(%esp,1),%ecx
+   beff9:       8b 5c 24 08             mov    0x8(%esp,1),%ebx
+   beffd:       b8 03 00 00 00          mov    $0x3,%eax
+   bf002:       cd 80                   int    $0x80
+   bf004:       5b                      pop    %ebx
+   bf005:       3d 01 f0 ff ff          cmp    $0xfffff001,%eax
+   bf00a:       73 01                   jae    bf00d <__libc_read+0x1d>
+   bf00c:       c3                      ret
+[snipped]
+
+The "int $0x80" instruction raises the system call whose number is contained
+in the eax register, 3 in our case. The include/asm-i386/unistd.h file lists
+all system call numbers:
+
+====== excerpt from include/asm-i386/unistd.h ======
+#define __NR_exit                 1
+#define __NR_fork                 2
+#define __NR_read                 3
+#define __NR_write                4
+#define __NR_open
+====================================================
+
+you can be compiled in such a way to make kernel
+debugging much easier. When defining the compilation options, you are
+asked whether you want kernel debugging support:
+
+$ make config
+[snipped]
+Kernel debugging (CONFIG_DEBUG_KERNEL) [Y/n/?]
+  Debug high memory support (CONFIG_DEBUG_HIGHMEM) [N/y/?]
+  Debug memory allocations (CONFIG_DEBUG_SLAB) [N/y/?]
+  Memory mapped I/O debugging (CONFIG_DEBUG_IOVIRT) [N/y/?]
+  Magic SysRq key (CONFIG_MAGIC_SYSRQ) [Y/n/?]
+  Spinlock debugging (CONFIG_DEBUG_SPINLOCK) [N/y/?]
+  Verbose BUG() reporting (adds 70K) (CONFIG_DEBUG_BUGVERBOSE) [N/y/?]
+
+
+For instance, the <SysRq>+<h> combination produces a short list of allowed
+magic keys combination. If you don't see the message, try to dump the
+kernel messages buffer with the dmesg command:
+
+(<SysRq>+<h> pressed)
+$ dmesg
+[snipped]
+SysRq : HELP : loglevel0-8 reBoot tErm kIll saK killalL showMem Off showPc
+unRaw Sync showTasks Unmount
+
+To our purposes, the <SysRq>+<T> magic key is invaluable. It shows some living
+information on all processes in the system:
+
+(<SysRq>+<T>)
+$ dmesg
+[snipped]
+SysRq : Show State
+
+                         free                        sibling
+  task             PC    stack   pid father child younger older
+init          S C131FF2C  4868     1      0   200       4       (NOTLB)
+Call Trace: [<c0113a5b>] [<c01139a0>] [<c013bdc1>] [<c013c160>] [<c0106b0b>]
+[snipped]
+bash          S 7FFFFFFF     4   222    220                     (NOTLB)
+Call Trace: [<c01139ff>] [<c01688dd>] [<c0164a88>] [<c012fdb6>] [<c0106b0b>]
+test4      R current   2656   232    203                 206 (NOTLB)
+Call Trace: [<c0113c55>] [<cd0530c9>] [<c01472ba>] [<c012fdb6>] [<c0106b0b>]
+[snipped]
+
+As usual, we must resolve them by
+using the Symbol.map file (for statically linked kernel functions) and the
+/proc/ksyms virtual file (for dynamically loaded modules:
+
+0xc0113c55:  function schedule()       at offset 0x1c9 = 457
+0xcd0530c9:  module   chr4            at offset 0x69  = 105
+0xc01472ba:  function proc_file_read() at offset 0xf2  = 242
+0xc012fdb6:  function sys_read()       at offset 0x96  = 150
+0xc0106b0b:  function system_call()    at offset 0x33  = 51
+
+The code at offset 457 of schedule() is
+
+$ gdb linux-2.4.20-debugg/vmlinux
+GNU gdb 5.0
+Copyright 2000 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain conditions.
+Type "show copying" to see the conditions.
+There is absolutely no warranty for GDB.  Type "show warranty" for details.
+This GDB was configured as "i386-slackware-linux"...(no debugging symbols found)...
+(gdb) disassemble schedule
+Dump of assembler code for function schedule:
+0xc0113a8c <schedule>:  mov    $0xffffe000,%eax
+0xc0113a91 <schedule+5>:        and    %esp,%eax
+0xc0113a93 <schedule+7>:        push   %ebp
+0xc0113a94 <schedule+8>:        mov    %esp,%ebp
+0xc0113a96 <schedule+10>:       sub    $0x18,%esp
+[snipped]
+0xc0113c4e <schedule+450>:      mov    %eax,0x34(%ebx)
+0xc0113c51 <schedule+453>:      sti
+0xc0113c52 <schedule+454>:      cmp    %ebx,0xfffffff8(%ebp)
+0xc0113c55 <schedule+457>:      jne    0xc0113c60 <schedule+468>
+0xc0113c57 <schedule+459>:      mov    0xfffffff8(%ebp),%ebx
+0xc0113c5a <schedule+462>:      jmp    0xc0113d46 <schedule+698>
+[snipped]
+
+It looks a regular invocation of the schedule()
+function. Let's try with the module code.
+
+$ objdump -d linux-2.4.20-debugg/gdb/chr4.o
+[snipped]
+0000000000000048 <char_read>:
+  48:   8b 54 24 0c             mov    0xc(%esp,1),%edx
+  4c:   a1 00 00 00 00          mov    0x0,%eax
+  51:   50                      push   %eax
+  52:   68 06 00 00 00          push   $0x6
+  57:   03 54 24 0c             add    0xc(%esp,1),%edx
+  5b:   52                      push   %edx
+  5c:   e8 fc ff ff ff          call   5d <char_read+0x15>
+  61:   83 c4 0c                add    $0xc,%esp
+  64:   e8 fc ff ff ff          call   65 <char_read+0x1d>
+  69:   eb f9                   jmp    64 <char_read+0x1c>
+  6b:   90                      nop
+  6c:   8d 74 26 00             lea    0x0(%esi,1),%esi
+
+This looks interesting. The instructions at offset 0x64 and 0x69 are an
+endless loop. To have a confirm, we checks the source file:
+
+$ cat linux-2.4.17-debugg/gdb/chr4.c
+[snipped]
+static int char_read(char *page, char **start, off_t off, int count, int *eof,
+void *data)
+{
+       int written;
+
+       for(;;) schedule();
+       return written;
+}
+[snipped]
+
+In this case, the function continously invokes
+schedule() without terminating

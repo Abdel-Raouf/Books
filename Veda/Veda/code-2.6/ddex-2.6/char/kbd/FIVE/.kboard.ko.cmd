@@ -1,0 +1,1 @@
+cmd_/root/Code/ddex-2.6/char/kbd/five/kboard.ko := ld -m elf_i386 -r -o /root/Code/ddex-2.6/char/kbd/five/kboard.ko /root/Code/ddex-2.6/char/kbd/five/kboard.o /root/Code/ddex-2.6/char/kbd/five/kboard.mod.o

@@ -1,0 +1,457 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="Hirondelle Systems">
+   <meta name="GENERATOR" content="Mozilla/4.76 [en] (WinNT; U) [Netscape]">
+   <title>Fish And Chips</title>
+</head>
+<body>
+Fish and Chips Club - WEB4J Example Application.
+
+<P>This is an example application, authored by John O'Hanley. 
+It demonstrates using WEB4J to build 
+a typical Java web application : a person using a browser to interact with 
+a relational database. 
+
+<P>The problem domain is a <em>Fish and Chips Club</em>, where a group of friends meet 
+regularly for lunch at various local restaurants, to have Fish and Chips for lunch.
+
+<P><span class='highlight'>
+To run this application, please see the <a href='http://www.web4j.com/GettingStartedGuide.jsp'>Getting Started Guide</a>.
+
+<P>
+<a href='#Features'>Features</a><br>
+<a href='#Miscellaneous'>Miscellaneous</a><br>
+<a href='#VersionHistory'>Version History</a><br>
+
+
+<a name="Features"></a>
+<h3>Features</h3>
+Features specific to the <em>Fish and Chips Club</em> include :
+<ul>
+<li>edit club members
+<li>edit local restaurants
+<li>edit ratings of each restaurant
+<li>adding new lunches (a given restaurant on a given day)
+<li>members can RSVP for each upcoming lunch
+<li>simple discussion board
+<li>some simple reports
+<li>a simple search page
+</ul>
+
+<P>Other features are more generic, and may be used as templates or guidelines in development 
+of your own applications:
+<ul>
+<li>security/access module for administering users
+<li>webmaster module for monitoring performance, and sending trouble tickets
+<li>translation module demonstrates mechanisms for multilingual sites (using English and French)
+<li>user preferences and password control module 
+</ul>
+
+<a name="Miscellaneous"></a>
+<h3>Miscellaneous</h3>
+<P>Note that <a href='http://www.javapractices.com/Topic205.cjp'>package-by-feature</a> is used. 
+This is the recommended style, though it is not required. 
+(If you have never used package-by-feature, you are encouraged 
+to try it: those who do try it rarely return to the package-by-layer style.)
+
+<P>The <tt>hirondelle.web4j.config</tt> package is special, and is reserved by WEB4J
+for the exclusive use of the application programmer. See 
+{@link hirondelle.web4j.BuildImpl} in the WEB4J javadoc for more information.
+
+<hr>
+
+<a name="VersionHistory"></a>
+<h3>Version History</h3>
+
+<h4>Version Number Convention</h4>
+The first three parts of the version number of the <em>Fish and Chips Club</em> is synchronized with the version number 
+of the corresponding web4j.jar version number with which it was built. 
+
+<P>For example, 
+<ul>
+<li>version 3.0.0.1 was built with version 3.0.0 of web4j.jar
+<li>version 3.1.0.0 was built with version 3.1.0 of web4j.jar
+<li>and so on...
+</ul>
+
+<h4>4.10.0.0 - published October 19, 2013</h4>
+Updated the version of web4j.jar. This is the first version to use JDK 1.6.
+The fileupload feature now stores the uploaded file (using its <tt>InputStream</tt>) in the database, and lets you serve the bytes from the 
+database. Before, this feature only saved the bytes to the server's file system.
+This exercises the new support for <tt>InputStream</tt> as a building-block type.
+
+<h4>4.9.0.0 - published October 5, 2013</h4>
+Updated the version of web4j.jar.
+
+<h4>4.8.0.0 - published June 9, 2012</h4>
+Updated the version of web4j.jar.
+
+<h4>4.7.1.0 - published September 24, 2011</h4>
+Updated the version of web4j.jar. Minor bug fix.
+
+<h4>4.7.0.0 - published September 17, 2011</h4>
+Updated the version of web4j.jar. 
+Two config items that force creation of threads have been removed from web.xml:
+<ul>
+ <li>BadResponseDetector
+ <li>EmailInSeparateThread
+</ul>
+The <tt>displayMessages.tag</tt> has been altered, to simply remove session-scope messages after they have been 
+displayed.
+
+
+<h4>4.6.2.0 - published July 9, 2011</h4>
+The only change is to the version of web4j.jar.
+
+
+<h4>4.6.1.0 - published May 15, 2011</h4>
+The only change is to the version of web4j.jar.
+
+
+<h4>4.6.0.0 - published March 1, 2011</h4>
+Includes an implemention for the new LoginTasks interface. 
+The old Servlet Filter, which used to react to user login, has been removed.
+
+<P>New settings in web.xml, for the improved implementation of EmailerImpl.
+
+
+<h4>4.5.1.0 - published January 29, 2011</h4>
+Encoding issues have been fixed. 
+<ul>
+ <li>JSP files have all been saved with UTF-8 encoding. 
+ <li>uses version 4.5.1 of web4j.jar, which includes a fix for an encoding problem in <tt>CsrfFilter</tt>. 
+ <li>script for creating the database now explicitly states utf8 encoding
+ <li>web.xml now uses a prelude setting for JSPs
+ <li>tag files now include TagHeader.jspf
+ <li><tt>JspHeader.jspf</tt> and <tt>TagHeader.jspf</tt> appear in WEB-INF, not in the web app's root directory
+</ul>
+
+<h4>4.5.0.0 - published April 17, 2010</h4>
+Fixed : 
+<ul>
+ <li>web4j.tld now has description elements appearing first.
+ <li>RestoSearchCriteria.getStartsWith() now returns SafeText, not String.
+ <li>some JSPs were referencing items which, if a translation was missing, lead to errors.
+</ul>
+
+<P>Converted some String objects to Id or SafeText.
+
+<P>The AllowStringAsBuildingBlock setting in web.xml has been switched on. 
+Since this app is an informal reference implementation, it's best to allow this, in order to exercise more code.
+
+<h4>4.5.1.0 - published January 29, 2011</h4>
+Uses a fix in web4j.jar regarding encoding. The CsrfFilter was incorrectly coercing encoding to 8859-1.
+As well, ensure the app correctly supports UTF-8. 
+Re-save JSP's and tag files as UTF-8, change database script to explicitly state the encoding, define a prelude JSP in web.xml.
+
+<h4>4.4.0.0 - published January 30, 2010</h4>
+This version now uses <tt>DateTime</tt>, although in a small way. 
+(The <i>Predictions</i> app makes far more use of <tt>DateTime</tt>.)
+The <tt>ShowDiagnostics</tt> class now uses <tt>DateTime</tt> instead of <tt>java.util.Date</tt>.
+
+<P>Fixed <tt>User.java</tt>, which had a NullPointerException in its <tt>validateState</tt> method.
+
+<P>The Discussion feature's JSP now renders a date using a fixed format, instead of one sensitive to Locale. This fixes a problem 
+seen when the translation of the format may be missing (which happens if the database script fails due to encoding issues.)
+
+
+<h4>4.3.0.0 - published September 7, 2009</h4>
+<tt>FakeServletContext</tt> has added getContextPath (which is likely to be added in the Servlet 3.0 Specification)
+
+<P><tt>RestoSearchCriteria</tt> - validation message text in 2 cases (min/max price) had no '_1_' placeholder, and was failing at runtime.
+
+
+<h4>4.2.0.0 - published March 19, 2009</h4>
+The <a href='http://www.web4j.com/fish/javadoc/hirondelle/fish/main/member/package-summary.html'>Member</a> 
+feature now demonstrates an easier way of deleting N items at a time, 
+instead of 1 at a time.
+
+<h4>4.1.0.0 - published February 21, 2009</h4>
+There are no updates to this application for this release of web4j.
+
+<P>If desired, however, you can now add an implementation of <tt>TimeSource</tt> as your  
+<a href='http://www.javapractices.com/topic/TopicAction.do?Id=234'>fake system clock</a>. 
+See <tt>BuildImpl</tt> for related configuration information.
+
+<h4>4.0.0.0 - published December 21, 2008</h4>
+This version is the first to use the web4j.jar having no time-limit on its operation.
+The distinction between the Trial Version and the Full Version no longer exists. 
+
+<P>The following features, formerly available only in the Full Version,
+ are now always available :
+<ul>
+<li>upon startup, identifiers in <tt>.sql</tt> files are matched one-to-one with declared <tt>public static final SqlId</tt> fields.
+Any mismatches cause an exception, and your app will not proceed. This protects you, since it changes <tt>RuntimeException</tt>s into startup-time exceptions, and catches trivial typing errors as soon as possible.
+<li>upon startup, SQL statement syntax can be verified by attempting pre-compilation. This is not supported by all JDBC drivers. 
+<li>upon startup, your Model Objects are scanned for possible Cross-Site Scripting vulnerabilities, where <tt>String</tt> is used instead of <tt>SafeText</tt>. 
+If an issue is found, it is logged as a <tt>WARNING</tt>. 
+<li>the <tt>PerformanceMonitor</tt> filter can be configured to issue a periodic 'ping' to a fixed URL. 
+If a problem is detected, or if the response is too slow, a <tt>TroubleTicket</tt> email is issued.
+</ul>
+
+
+<h4>3.10.0.0 - published September 20, 2008</h4>
+<ul>
+ <li>new setting in <tt>web.xml</tt> called <tt>DecimalStyle</tt>, which configures the new <tt>Decimal</tt> class
+ <li>Resto and Search features now use the <tt>Decimal</tt> class instead of <tt>BigDecimal</tt>
+</ul>
+
+<h4>3.9.0.0 - published August 30, 2008</h4>
+<ul>
+ <li><tt>ConvertParamErrorImpl</tt> updated for <tt>SafeText</tt>.
+ <li><tt>web4j.tld</tt> updated for a new function, w:ampersand.
+ <li><tt>web.xml</tt> is now configured to not allow <tt>String</tt> as a building block class. 
+   <tt>SafeText</tt> is used instead. The intent is to protect against Cross-Site Scripting attacks.
+ <li>remove a number of extraneous <tt>.tld</tt> files from <tt>/WEB-INF/tlds/</tt> directory.
+ <li>ensure <tt>.jsp</tt> and <tt>.html</tt> files don't create extraneous sessions.
+ <li><tt>LogoffAction</tt> now immediately deletes the session cookie. 
+   In addition, its <tt>ResponsePage</tt> had a misleading name, which is now changed from <tt>FORWARD</tt> to <tt>REDIRECT</tt>.
+ <li>The reverse lookup methods in <tt>CodeTable</tt>, <tt>CodeTableUtil</tt> have been removed, since they are not called.
+ <li>Search feature now uses <tt>SafeText</tt>, not <tt>String</tt>.
+ <li>Translation module no longer needs to use <tt>w:safe</tt>, since referencing <tt>SafeText</tt> already.
+ <li>add guidance for deployment to Jetty6 instead of Tomcat. See <tt>/WEB-INF/jetty/</tt>.
+   Jetty supports JDBC realms, but its convention for table structure differs from that of Tomcat. 
+   In this case, a simple properties file is used instead of a JDBC Realm, just to avoid changing the table structure.
+   There is a <tt>NullPointerException</tt> in a server class. Occurs in the Diagnostics page of the webmaster module. 
+   When all items in application scope are referenced, a <tt>NullPointerException</tt> is thrown by a server class's <tt>toString</tt> method. 
+   This is an error on the server, not in web4j.
+</ul>
+
+<h4>3.8.0.1 - published July 21, 2008</h4>
+<ul>
+ <li><tt>web4j.tld</tt> updated to refer to JSP 2.0, not 1.2.
+ <li><tt>TestTags.jsp</tt> included to test operation of custom tags.
+ <li>added <tt>jsp-config</tt> to <tt>web.xml</tt>.
+ <li>added <tt>/WEB-INF/geronimo-web.xml</tt>. This is a "deployment plan" file specific to WebSphere Community Edition. It's provided as an example.
+ <li>replaced <tt>package.html</tt> files with <tt>package-info.java</tt> files, since this is a more effective style.
+</ul>
+
+
+<h4>3.8.0.0 - published June 7, 2008</h4>
+<P>Small update, mostly regarding unit testing :
+<ul>
+ <li><tt>hirondelle.fish.test.doubles</tt> package added, containing a number of 
+ test doubles.
+ <li><tt>ConnectionSrc</tt> made non-final, to allow for a test-only version.
+ <li><tt>TESTAll</tt> extended.
+ <li><tt>TESTVisit</tt> improved.
+</ul>
+
+<P>For more information on unit testing, please see the <a href='../../UserGuide.jsp#UnitTesting'>User Guide</a>.
+
+
+<h4>3.7.0.1 - published May 20, 2008</h4>
+Uses web4j.jar version 3.7.0
+
+<P>Small update to documentation :
+<ul>
+ <li>fix Getting Started Guide - the Tomcat directory for placing jars was incorrect.
+ <li>change some references to port 8081 to the more typical 8080.
+ <li>update README and and build.xml with minor edits.
+</ul>
+
+<h4>3.7.0.0 - published May 12, 2008</h4>
+Uses web4j.jar version 3.7.0
+<P>Small update :
+<ul>
+<li>add action to exercise serving a binary file (in this case, a simple <tt>.rtf</tt> file). 
+See <tt>ServeBinaryAction</tt> and <tt>ResponsePage.withBinaryData()</tt>.
+<li>added Tomcat config file <tt>/WEB-INF/tomcat/fish.xml</tt>, which holds the Tomcat context information.
+This file merely needs to be copied to <tt>TOMCAT_HOME/Catalina/localhost/</tt>, and then configured.
+This is preferred over editing the <tt>server.xml</tt> file -  it's less error prone, 
+and it allows a change of the context to be pulled in with a restart of the application, instead of the entire server.
+</ul>
+
+<h4>3.6.1.1 - published April 13, 2008</h4>
+Uses web4j.jar version 3.6.1
+<P>Small update (backwards compatible):
+<ul>
+<li><tt>BaseTextAction</tt> - fix the name of the field containing the explicit URI mapping.
+<li>Getting Started Guide - a few small fixes and improvements.
+</ul>
+
+
+<h4>3.6.1.0 - published April 8, 2008</h4>
+Uses web4j.jar version 3.6.1
+<P>Small update :
+<ul>
+<li>add a simple page to exercise and explore encoding issues (see the <tt>exercise</tt> module)
+<li><tt>FileUploadWrapper</tt> - fix <tt>getParameterMap()</tt>, whose return value did not 
+have the correct type for map values
+</ul>
+
+<h4>3.6.0.0 - published March 11, 2008</h4>
+Uses web4j.jar version 3.6.0
+<P>Small update :
+<ul>
+  <li><tt>build.xml</tt> - added target for generating javadoc, with links to source code, JSPs, and .sql files.
+  The links to JSP files and .sql files are implemented as <tt>Taglet</tt> classes, defined in the WEB4J Development Tools
+  (available only with the Full Version of WEB4J).
+  <li>added module to exercise items that are not exercised elsewhere.
+  <li>exercise multi-valued parameters.
+  <li>exercise file uploads.
+  <li>add a fine-grained security constraint.
+  <li>use several action extensions in addition to <tt>'.do'</tt>. This helps implement fine-grained security constraints.
+  <li>Error.jsp replaced with Error.html. 
+   When using response wrappers, there was sometimes an error if a JSP is used, whereby <tt>getOuptputStream()</tt> 
+   was being called twice (which is not allowed).
+ </ul>
+
+<h4>3.5.0.0 - published February 16, 2008</h4>
+Uses web4j.jar version 3.5.0
+
+<P>Small update :
+<ul>
+ <li>Much improved handling of login errors. Login error-page now simply redisplays the login page, 
+ with an informative message.
+ <li>Some Cross-Site Scripting vulnerabilities detected and removed. (These were 
+ found using the new validation performed by Controller upon startup).
+ <li><tt>RestoSearchCriteria</tt> - <tt>getXXX</tt> methods changed to package-private. 
+ Interesting variation on Model Object : no need to use <tt>SafeText</tt>, since data
+ never rendered in JSP.
+ <li>The <tt>StartupTasks</tt> implementation now does version checking between 
+<em>Fish & Chips Club</em> and <tt>web4j.jar</tt>. If an incompatibility is detected, it is logged at 
+<tt>SEVERE</tt> level.
+ </ul>
+
+
+<h4>3.4.0.0 - published January 22, 2008</h4>
+Uses web4j.jar version 3.4.0
+
+<P>Small update :
+<ul>
+<li>Added <tt>WelcomeFileController</tt> - improves behavior for home page requests.
+<li>Changed Logoff.jsp - now includes link to the home page.
+<li>Fixed sorting issues -  replaced use of obsolete <tt>&lt;w:sort&gt;</tt> tag in markup with 
+<tt>DynamicCriteria</tt> class in code.
+</ul>
+
+<h4>3.3.1.0 - published January 15, 2008</h4>
+Uses web4j.jar version 3.3.1
+
+<P>Small update :
+<ul>
+<li> FIX - <tt>showFocus.tag</tt> file amended. Boolean test failed when a 
+<tt>FIELDSET</tt> tag used in the form, since the <tt>.type</tt> property for <tt>FIELDSET</tt> is null.
+<li> FIX - <tt>NullPointerException</tt> in <tt>TranslatorImpl</tt> occured 
+if database was down upon startup.
+</ul>
+
+<h4>3.3.0.0 - published December 19, 2007</h4>
+Uses web4j.jar version 3.3.0
+
+<P>Small update :
+<ul>
+<li>Change - <tt>ConnectionSrc</tt> no longer uses hard coded connection strings. Instead, it uses items configured in <tt>web.xml</tt>.
+<li>Change - amend implementation of <tt>Startup</tt>, to allow reading of <tt>web.xml</tt> config in a step separate from the main tasks.
+<li>Change - Conventional Names : <tt>view.jsp</tt>, <tt>statements.sql</tt> are now used for many views and <tt>.sql</tt> files. 
+Conventional names for Actions, Models, and DAOs are <em>not</em> recommended, since the display of such items in javadoc would not be clear.
+<li>Change - Comment, Rating features : Some short DAOs have been removed, and their methods placed directly into the calling <tt>Action</tt>.
+<li>Change - many Model Objects now use the new <tt>Check.range(min, max)</tt> method to validate state. This improves legibility nicely.
+<li>Fix - for a number of JSPs in the web app root (<tt>Logoff.jsp</tt>, etc.), the reference to the app's 
+character encoding was incorrect.
+<li>Fix - Next Future Visit - an occasional off-by-one error for some dates, caused by time zone issues.
+<li>Fix - <tt>web.xml</tt> had an incorrect example value for a TimeZone - <tt>'Canada/Montreal'</tt> should be <tt>'America/Montreal'</tt>.
+<li>Add - Diagnostics page - added host name, and consolidated some server-related items.
+<li>Clarify/Fix - Help mechanism works only for <tt>GET</tt> requests. If the request is a failed <tt>POST</tt>, then the <tt>Help</tt> menu item is not displayed.
+</ul>
+
+<h4>3.2.0.1 - published Nov 17, 2007</h4>
+Uses web4j.jar version 3.2.0
+
+<P>Small update :
+<ul>
+<li>Fix <tt>UserAction.java</tt> - <tt>NullPointerException</tt> occured for empty user input
+<li>Fix Database load - for <tt>Translation</tt> table, replace <tt>logo.png</tt> with <tt>logo.gif</tt> 
+<li>Fix <tt>RsvpShow.jsp</tt> - the display of the date now uses <tt>&lt;w:showDate&gt;</tt>
+  instead of <tt>&lt;fmt:formatDate&gt;</tt>. Was causing off-by-one errors when JRE time zone did 
+  not match the application's default time zone.
+<li><tt>footer.tag</tt> - again, the display of the date now uses <tt>&lt;w:showDate&gt;</tt>
+  instead of <tt>&lt;fmt:formatDate&gt;</tt>
+<li>Preferences <tt>Template.jsp</tt> - add "back links" to the various modules. 
+  Use <tt>&lt;w:show&gt;</tt> tag to toggle appearance of links according to role of logged-in user.
+</ul>
+
+<h4>3.2.0.0 - published Nov 15, 2007</h4>
+Uses web4j.jar version 3.2.0
+
+<P>Small update :
+<ul>
+<li>Diagnostics page now shows the value of the HTTP charset header sent in the response
+</ul>
+
+<h4>3.1.0.2 - published Nov 3, 2007</h4>
+Uses web4j.jar version 3.1.0
+
+<P>Small update :
+<ul>
+<li>improved <tt>README</tt> instructions
+<li>improved styling, graphics
+<li>removed cruft from <tt>/images</tt> directory
+</ul>
+
+<h4>3.1.0.1 - published Oct 31, 2007</h4>
+Uses web4j.jar version 3.1.0
+
+<P>Small update :
+<ul>
+<li>amend the <tt>README</tt> file to clarify what's needed to get started
+<li>add an example log file, to illustrate what a successful start looks like. The name of the 
+file is <tt>EXAMPLE_LOG_FILE.txt</tt>
+<li>update the javadoc's <tt>overview.html</tt>
+</ul>
+
+<h4>3.1.0.0 - published Oct 27, 2007</h4>
+Uses web4j.jar version 3.1.0
+
+<P>Improvements :
+<ul>
+<li>free-form user input - change to use <tt>SafeText</tt> instead of <tt>String</tt>.
+<li>delete and log-off operations - change from a link (<tt>GET</tt>) to a form (<tt>POST</tt>).
+<li>content-type - now specified explicitly at the start of each <tt>Template.jsp</tt>.
+<li>CSRF defenses -  added <tt>csrf.sql</tt> file, two <tt>SqlId fields</tt> in <tt>UserDAO</tt>, 
+filter in <tt>web.xml</tt>, and <tt>FormSourceId</tt> column to <tt>Users</tt> table in database.
+<li>add .tag file for common menu items - Preferences, Help, Log Out.
+<li>add .tag file for most of the HEAD tag content. 
+<li>focus - add javascript snippet to set focus to either first link on page, or first non-hidden control in form.
+The focus is now more obvious, and allows easier mouse-free navigation.
+Warning (seen in Firefox): some forms have a yellow background for first input element (Resto), some don't (Search).
+May be related to browser prepopulating some form controls.
+<li>Visit page -  sorting of dates needs certain kind of formatting. Same with Report 3.
+<li>images for checkboxes - when listing boolean items, using checkbox form controls has some problems :
+the appearance of readonly items is not great, but using non-readonly items means the user can 
+alter the checkbox appearance simply by clicking (which is not appropriate for a listing). To avoid 
+these problems, a simple image can be used instead to indicate the boolean state. 
+This technique is now demonstrated with with the <tt>Members</tt> page.
+<li><tt>web4j.tld</tt> - add <tt>w:safe()</tt> function for escaping special HTML chars.
+</ul>
+
+Fixes :
+<ul>
+<li>Ratings page - form was not showing restaurant name (wrong reference).
+<li>Diagnostics page - properly escape the output.
+<li>Package-level description for <tt>hirondelle.fish.main.search</tt> referred to 'Fake Search', which does not exist (cruft).
+<li><tt>BaseText.jsp</tt> -  TextFlow tag should have been inside the Populate tag, as per TextFlow javadoc.
+<li><tt>Visit_en.jsp</tt>, <tt>Visit_fr.jsp</tt> -  broken with respect Add/Edit Operation param (was always adding, never editing)
+<li>character encoding - was referenced in <tt>HEAD tag</tt> using a wrong name. 
+<li><tt>TESTDateConverterImpl</tt> - should have passed <tt>TimeZone.getDefault()</tt> instead of 'null' in several places.
+</ul>
+
+
+<h4>3.0.0.1 - published Sep 15, 2007</h4>
+Uses web4j.jar version 3.0.0
+<ul>
+<li>FIX: <tt>CodeTableUtil.populate()</tt> now returns null if Id is null. Was causing 
+  <tt>NullPointerException</tt> in some Model Object constructors that took an Id.
+<li>IMPROVE: edit of Ratings. Fail-of-edit now retains display of items being edited.
+<li>IMPROVE: use <tt>'FAILS == ...'</tt>for Checks, instead of ! operator, to increase legibility
+</ul>
+
+<h4>3.0.0.0 - published Sep 8, 2007</h4>
+Uses web4j.jar version 3.0.0
+<P>First published version. 
+</PRE>
+</body>
+</html>

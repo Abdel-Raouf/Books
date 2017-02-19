@@ -1,0 +1,2 @@
+./libgifhand.so.1.0.0
+./libtifhand.so.1.0.0

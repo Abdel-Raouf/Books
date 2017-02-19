@@ -1,0 +1,13 @@
+The scheduler queue
+
+The scheduler queue is unique among the predefined task In Linux 2.4, this queue runs out of a dedicated kernel thread called keventd and is accessed via a function called schedule_task. 
+
+
+tq_timer
+
+This queue is run by the timer tick. Because the tick (the function do_timer) runs at interrupt time, any task within this queue runs at interrupt time as well. 
+
+
+tq_immediate
+
+The immediate queue is run as soon as possible, either on return from a system call or when the scheduler is run, whichever comes first. 

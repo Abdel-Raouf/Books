@@ -1,0 +1,138 @@
+<!-- This is an Ant build file. -->
+<!-- These settings must be altered to suit your own project/environment. -->
+<!-- This build file is meant only as a convenience. You will likely want to -->
+<!-- edit it to suit your needs. -->
+
+<!-- When starting a new project based on this example application, -->
+<!-- it is highly recommended to FIRST run the task named update.base.package, -->
+<!-- to change the base package name into something more suitable. -->
+
+<!-- If directories are not absolute, then they are relative to basedir. -->
+
+<!-- These items likely need to change for your project : -->
+<project name="fish" default="init" basedir=".">
+<property name="replacement.base.package" value="hirondelle.fish"/>
+<property name="appName" value="fish"/>
+<property name="war.file.name" value="fish"/>
+<property name="tempDir" value="C:\Temp\"/>
+<property name="libraries" value="C:\myname\Projects\Libraries"/>
+<property name="tomcat.lib" value="C:\Program Files\Tomcat6\lib"/>
+<property name="javadocAppName" value="Fish and Chips Club"/>
+<property name="devTools" value='C:\myname\Projects\web4j-tools' /> <!-- Needs web4jtools download -->
+  
+<!-- These items are likely the same for your project : -->
+<property name="srcRoot" value="WEB-INF\classes\"/>
+<property name="cdDistRoot" value="${tempDir}${appName}\dist"/>
+<property name="javadocRoot" value="javadoc"/>
+<property name="overview" value="WEB-INF\classes\overview.html"/>
+  
+<target name="update.base.package" description="Dumb textual replace of base package name, appearing (usually) in import and package stms.">
+ <echo message="Updating base package to ${replacement.base.package}"/>
+ <echo message="Directory names are not updated by this task - only source code."/>
+ <replace dir="${srcRoot}" token="hirondelle.fish" value="${replacement.base.package}" >
+   <include name="**/*.java"/>
+   <include name="**/*.html"/>
+ </replace>
+ <replace dir="." token="hirondelle.fish" value="${replacement.base.package}" >
+   <include name="**/*.jsp"/>
+   <include name="WEB-INF/web.xml"/>
+   <include name="WEB-INF/tlds/web4j.tld"/>
+   <include name="WEB-INF/logging.properties"/>
+ </replace>
+</target>
+
+<!-- all .java source files -->
+<fileset id="java.sources" dir="${srcRoot}" casesensitive="yes" >
+ <include name="**/*.java"/>
+</fileset>
+
+<!-- all .java files which do not start with "TEST" -->
+<fileset id="non.test.sources" dir="${srcRoot}" casesensitive="yes" >
+ <include name="**/*.java"/>
+ <exclude name="**/TEST*"/>
+</fileset>
+
+<!-- All .class files -->
+<fileset id="class.files" dir="." casesensitive="yes" >
+ <include name="**/*.class"/>
+</fileset>
+
+<target name="init" description="Sets timestamp properties and makes dir's.">
+ <tstamp>
+  <format property="archiveTime" pattern="yyyyMMMdd.H.mm"/>
+ </tstamp>
+</target>
+
+<target name="clean" depends="init" description="Remove .class files, javadoc, zip's and war's">
+ <delete>
+  <fileset refid="class.files"/>
+ </delete>
+ <delete file="${appName}.zip"/>
+ <delete file="${war.file.name}.war"/>
+ <delete dir="${javadocRoot}"/>
+</target>
+
+<target name="compile" depends="clean" description="Create all .class files beside .java files">
+ <javac 
+   debug="on"
+   srcdir="${srcRoot}"  
+   classpath="WEB-INF\lib\junit.jar;${tomcat.lib}\servlet-api.jar;${tomcat.lib}\jsp-api.jar;WEB-INF\lib\web4j.jar;WEB-INF\lib\commons-fileupload-1.2.1.jar;WEB-INF\lib\commons-io-1.4.jar" source="1.5" />
+</target>
+
+<target name="war" depends="compile" description="Create war file">
+   <mkdir dir="${cdDistRoot}\${archiveTime}"/>
+   <echo message="Making war file."/>
+   <zip 
+     zipfile="${cdDistRoot}\${archiveTime}\${war.file.name}.war" 
+     basedir="."
+     excludes= "**/*.java, **/.nbattrs, **/*.bat, **/*.java_hidden, build.xml, **/package-info.java, **/overview.html, WEB-INF/datastore/**, .classpath, .project "
+   />
+   <copy file="${cdDistRoot}\${archiveTime}\${war.file.name}.war" todir="."/>
+</target>
+
+<!-- Warning : the 'Taglet' classes are included with the WEB4J Development Tools, which come only with the Full Version. -->  
+<!-- If you have only the Trial Version, you must remove the 'taglet' and 'tagletpath' items. -->
+<!-- The Taglet classes are used to reference JSPs and .sql files from Action classes, in a compact, pleasing style. -->
+<target name="javadoc.with.source" depends="init" description="Generate all javadoc, with links to source, JSPs, and .sql files."> 
+   <javadoc 
+     packagenames="hirondelle.*"
+     destdir="${javadocRoot}"
+     sourcepath="${srcRoot}"
+     additionalparam="-linksource -source 1.5 -noqualifier java.*:javax.*:com.sun.*:hirondelle.web4j.*  -taglet hirondelle.web4jtools.taglet.ViewTaglet -taglet hirondelle.web4jtools.taglet.SqlTaglet -tagletpath ${devTools}\WEB-INF\classes\;WEB-INF\lib\web4j.jar   ${javadocApiRoots}"
+     author="true"
+     version="true"
+     header="Fish &amp; Chips Club 4.7.1.0"
+     package="true"
+     bottom="Copyright Hirondelle Systems - Generated ${archiveTime}"
+     windowtitle="${javadocAppName} Javadoc"
+     Overview="${overview}"
+     stylesheetfile="highlight.css"
+   >
+     <doctitle><![CDATA[<h1>Fish And Chips Club 4.7.1.0</h1>]]></doctitle>
+     <classpath>
+       <pathelement location="WEB-INF\lib\junit.jar"/>
+       <pathelement location="${tomcat.lib}\servlet-api.jar"/>
+       <pathelement location="${tomcat.lib}\jsp-api.jar"/>
+       <pathelement location="WEB-INF\lib\web4j.jar"/>
+       <pathelement location="WEB-INF\lib\commons-io-1.4.jar"/>
+       <pathelement location="WEB-INF\lib\commons-fileupload-1.2.1.jar"/>
+     </classpath>
+   </javadoc>
+   <echo message="Replacing image used to indicate inheritance."/>
+   <delete file="${javadocRoot}/resources/inherit.gif"/>
+   <copy file="WEB-INF\inherit.gif" todir="${javadocRoot}/resources"/>
+   <echo message="Copying .sql files, to include in javadoc. "/>
+   <copy todir="${javadocRoot}" >
+     <fileset dir="${srcRoot}" includes="**/*.sql"/>
+   </copy>  
+   <echo message="Copying .jsp files, to include in javadoc. Changing extensions to .txt to ensure served as plain text. "/>
+   <copy todir="${javadocRoot}" >
+     <fileset dir="${srcRoot}" includes="**/*.jsp"/>
+     <globmapper from="*" to="*.txt"/>   
+   </copy>  
+</target>
+  
+<!-- For deploying a .war to a local server, it is likely best to configure the server -->
+<!-- to "point to" the development directory. For Tomcat, such entries can be made  -->
+<!-- in server.xml, as Context entries. -->
+</project>

@@ -1,0 +1,1 @@
+cmd_/root/Code/kern-prog/timing/test-work-queue.ko := ld -m elf_i386 -r -o /root/Code/kern-prog/timing/test-work-queue.ko /root/Code/kern-prog/timing/test-work-queue.o /root/Code/kern-prog/timing/test-work-queue.mod.o

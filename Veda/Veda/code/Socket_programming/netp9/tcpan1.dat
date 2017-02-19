@@ -1,0 +1,180 @@
+Details of TCP Packet 
+source prt = 33354
+dest prt = 8000
+seq = 93795328
+ack = 0
+value of syn flag = 1
+value of ack flag = 0
+value of fin flag = 0
+--------------------------------------------------------------
+Details of TCP Packet 
+source prt = 33354
+dest prt = 8000
+seq = 93795328
+ack = 0
+value of syn flag = 1
+value of ack flag = 0
+value of fin flag = 0
+--------------------------------------------------------------
+Details of TCP Packet 
+source prt = 8000
+dest prt = 33354
+seq = 94363032
+ack = 93795329
+value of syn flag = 1
+value of ack flag = 1
+value of fin flag = 0
+--------------------------------------------------------------
+Details of TCP Packet 
+source prt = 8000
+dest prt = 33354
+seq = 94363032
+ack = 93795329
+value of syn flag = 1
+value of ack flag = 1
+value of fin flag = 0
+--------------------------------------------------------------
+Details of TCP Packet 
+source prt = 33354
+dest prt = 8000
+seq = 93795329
+ack = 94363033
+value of syn flag = 0
+value of ack flag = 1
+value of fin flag = 0
+--------------------------------------------------------------
+Details of TCP Packet 
+source prt = 33354
+dest prt = 8000
+seq = 93795329
+ack = 94363033
+value of syn flag = 0
+value of ack flag = 1
+value of fin flag = 0
+--------------------------------------------------------------
+Details of TCP Packet 
+source prt = 33354
+dest prt = 8000
+seq = 93795329
+ack = 94363033
+value of syn flag = 0
+value of ack flag = 1
+value of fin flag = 0
+--------------------------------------------------------------
+Details of TCP Packet 
+source prt = 33354
+dest prt = 8000
+seq = 93795329
+ack = 94363033
+value of syn flag = 0
+value of ack flag = 1
+value of fin flag = 0
+--------------------------------------------------------------
+Details of TCP Packet 
+source prt = 8000
+dest prt = 33354
+seq = 94363033
+ack = 93795443
+value of syn flag = 0
+value of ack flag = 1
+value of fin flag = 0
+--------------------------------------------------------------
+Details of TCP Packet 
+source prt = 8000
+dest prt = 33354
+seq = 94363033
+ack = 93795443
+value of syn flag = 0
+value of ack flag = 1
+value of fin flag = 0
+--------------------------------------------------------------
+Details of TCP Packet 
+source prt = 8000
+dest prt = 33354
+seq = 94363033
+ack = 93795443
+value of syn flag = 0
+value of ack flag = 1
+value of fin flag = 0
+--------------------------------------------------------------
+Details of TCP Packet 
+source prt = 8000
+dest prt = 33354
+seq = 94363033
+ack = 93795443
+value of syn flag = 0
+value of ack flag = 1
+value of fin flag = 0
+--------------------------------------------------------------
+Details of TCP Packet 
+source prt = 8000
+dest prt = 33354
+seq = 94363041
+ack = 93795443
+value of syn flag = 0
+value of ack flag = 1
+value of fin flag = 1
+--------------------------------------------------------------
+Details of TCP Packet 
+source prt = 8000
+dest prt = 33354
+seq = 94363041
+ack = 93795443
+value of syn flag = 0
+value of ack flag = 1
+value of fin flag = 1
+--------------------------------------------------------------
+Details of TCP Packet 
+source prt = 33354
+dest prt = 8000
+seq = 93795443
+ack = 94363041
+value of syn flag = 0
+value of ack flag = 1
+value of fin flag = 0
+--------------------------------------------------------------
+Details of TCP Packet 
+source prt = 33354
+dest prt = 8000
+seq = 93795443
+ack = 94363041
+value of syn flag = 0
+value of ack flag = 1
+value of fin flag = 0
+--------------------------------------------------------------
+Details of TCP Packet 
+source prt = 33354
+dest prt = 8000
+seq = 93795443
+ack = 94363042
+value of syn flag = 0
+value of ack flag = 1
+value of fin flag = 1
+--------------------------------------------------------------
+Details of TCP Packet 
+source prt = 33354
+dest prt = 8000
+seq = 93795443
+ack = 94363042
+value of syn flag = 0
+value of ack flag = 1
+value of fin flag = 1
+--------------------------------------------------------------
+Details of TCP Packet 
+source prt = 8000
+dest prt = 33354
+seq = 94363042
+ack = 93795444
+value of syn flag = 0
+value of ack flag = 1
+value of fin flag = 0
+--------------------------------------------------------------
+Details of TCP Packet 
+source prt = 8000
+dest prt = 33354
+seq = 94363042
+ack = 93795444
+value of syn flag = 0
+value of ack flag = 1
+value of fin flag = 0
+--------------------------------------------------------------

@@ -1,0 +1,22 @@
+
+
+
+
+In a typical Unix environment Users will be using the system from multiple
+terminals (ttys) connected through a serial line to the unix server. 
+
+Unix uses termial driver ( tty drivers ) to control (set different 
+parameters for data transfer , mode etc. for input and output processing.
+
+Uniform interface ( set of functions and datatypes ) are provided as part
+of POSIX which is supported by all unix OS for dealing with these devices.
+
+tty's operate in two modes
+
+1) Raw Mode. (in this mode data is passed to the application as is.).
+
+2) Cooked Mode. ( provides limited line editing capabilities ) , In this mode
+   Some of the characters are processed kill ^U , lnext ^V and so on. (we
+   can use stty -a for finding current settings ).
+
+

@@ -1,0 +1,159 @@
+
+			kernel Ooops debugging
+			==========================
+
+
+Example 3. The "test3" program fails.
+==============================================
+
+The "test3" program fails with a "Segmentation fault" message. This message
+is usually due to a system call that returned the -EFAULT error code, but it
+could also be raised by a uncaught SIGSEGV signal sent to the process.
+
+If we have the source code of the failing program, we could easily understand
+what happened. Things are a bit harder if the source code of the program is not
+available.
+
+Let's suppose we don't have the source code of test3. In order to understand
+what happens, we must trace the system calls invoked by the program by means of
+the "strace" command:
+
+$ strace test3
+........
+fstat64(0x3, 0xbfffee0c)                = 0
+old_mmap(NULL, 1116516, PROT_READ|PROT_EXEC, MAP_PRIVATE, 3, 0) = 0x40021000
+mprotect(0x40128000, 39268, PROT_NONE)  = 0
+old_mmap(0x40128000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED, 3, 0x106000) = 0x40128000
+old_mmap(0x4012e000, 14692, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x4012e000
+close(3)                                = 0
+munmap(0x40017000, 37203)               = 0
+getpid()                                = 220
+open("/proc/chr3", O_RDONLY)           = 3
+read(3, "jiffies=14462\n", 128)         = 14
+fstat64(0x1, 0xbffff20c <unfinished ...>
++++ killed by SIGSEGV +++
+
+We are interested in the last three systemcalls. The program successfully open the /proc/chr3 virtual file (file descriptor 3). Then it read 128 bytes from the file. The read() system call fills the program buffer with the string "jiffies=14462\n" (length = 14 bytes).
+Then the program invokes the fstat64() system call, but this system call never
+terminates: the process receives a SIGSEGV signal and aborts.
+
+The SIGSEGV signal is sent either by a User Mode process, or by the kernel
+when a serious error occurs. In this second case, the kernel builds a so-called
+"kernel Oops".
+
+A kernel Oops is a short message that describes the erroneous condition.
+There are several ways to read the message (and you often have to try many of
+them):
+
+
+1. The Oops appears on the system console, or on a terminal that acts as the
+   console. This is not very convenient for you, because console messages
+   scrolls as new messages arrive, and the Oops is eventually lost.
+
+2. The Oops can be read in the /proc/kmsg virtual file. Usually a system process   named klogd continuously read from this file, and sends its content to
+   another system process called syslogd. In turn, syslogd could write the
+   message in one of the system log files in /var/log.
+
+3. If the klogd process is not running, you could read the /proc/kmsg file by
+   yourself.
+
+4. The kernel messages (including Oops) can also be read with the dmesg
+   command. This is my preferred method. Be aware, however, that the kernel
+   message buffer usually contains only 16KB, thus the kernel messages
+   are cyclically discarded.
+
+Let's use the dmesg command to look for the Oops:
+
+$ dmesg
+(snipped)
+Unable to handle kernel NULL pointer dereference at virtual address 00000008
+ printing eip:
+c012ecc9
+*pde = 00000000
+Oops: 0000
+CPU:    0
+EIP:    0010:[<c012ecc9>]    Not tainted
+EFLAGS: 00010246
+eax: 00000000   ebx: c8840000   ecx: 00000001   edx: 00000000
+esi: fffffff7   edi: 00000001   ebp: bffff1ac   esp: c8841fb0
+ds: 0018   es: 0018   ss: 0018
+Process test3 (pid: 217, stackpage=c8841000)
+Stack: c0134065 c8840000 40131170 00000001 c0106b0b 00000001 bffff20c 4012d760
+       40131170 00000001 bffff1ac 000000c5 0000002b 0000002b 000000c5 400df05c
+       00000023 00000212 bffff140 0000002b
+Call Trace: [<c0134065>] [<c0106b0b>]
+
+Code: 3b 48 08 73 06 8b 40 14 8b 14 88 85 d2 74 03 ff 42 14 89 d0
+
+The Oops then shows the content of the eip register (the Program Counter) when
+the exception was raised.  Finally, this is something we can understand. We
+could look at the System.map file, and search the corresponding function:
+
+====== excerpt from System.map ======
+00000000c012ecb8 T fget
+00000000c012ece0 T put_filp
+=====================================
+
+$ gdb linux-2.4.20-debugg/vmlinux
+GNU gdb 5.0
+Copyright 2000 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain conditions.
+Type "show copying" to see the conditions.
+There is absolutely no warranty for GDB.  Type "show warranty" for details.
+This GDB was configured as "i386-slackware-linux"...(no debugging symbols found)...
+(gdb) disassemble fget
+Dump of assembler code for function fget:
+0xc012ecb8 <fget>:      mov    %eax,%ecx
+0xc012ecba <fget+2>:    mov    $0xffffe000,%eax
+0xc012ecbf <fget+7>:    and    %esp,%eax
+0xc012ecc1 <fget+9>:    mov    0x554(%eax),%eax
+0xc012ecc7 <fget+15>:   xor    %edx,%edx
+0xc012ecc9 <fget+17>:   cmp    0x8(%eax),%ecx
+0xc012eccc <fget+20>:   jae    0xc012ecd4 <fget+28>
+0xc012ecce <fget+22>:   mov    0x14(%eax),%eax
+0xc012ecd1 <fget+25>:   mov    (%eax,%ecx,4),%edx
+0xc012ecd4 <fget+28>:   test   %edx,%edx
+0xc012ecd6 <fget+30>:   je     0xc012ecdb <fget+35>
+0xc012ecd8 <fget+32>:   incl   0x14(%edx)
+0xc012ecdb <fget+35>:   mov    %edx,%eax
+0xc012ecdd <fget+37>:   ret
+0xc012ecde <fget+38>:   mov    %esi,%esi
+End of assembler dump.
+(gdb) quit
+
+In particular, before executing the faulting
+instruction, %eax is set to 0. This causes the "NULL pointer dereference", the
+general protection fault, the exception handler, the SIGSEGV signal sent to
+test3, and so on.
+
+Clearly, the bug is not in the fget() function itself. Most likely, the bug has
+been introduced in some function invoked before fget(). The Oops comes once
+again to our rescue, because it shows a dump of the kernel stack when the
+exception was raised. Even better, the "call trace" section lists the addresses
+on the stack corresponding to the functions, discarding the function arguments:
+
+Call Trace: [<c0134065>] [<c0106b0b>]
+
+Looking into the System.map file we find that 0xc0134065 corresponds to
+sys_fstat64(), while 0xc0106b0b is inside the system_call() function.
+
+However, the strace command told us that the read() was reading from the
+/proc/chr3 virtual file. We can thus dig in the kernel source code looking for
+the function that implements /proc/chr3. We easily find the debugg/chr3.c
+source file, and discover the buggy instruction:
+
+====== excerpt from debugg/chr3.c ======
+static int chr3_read(char *page, char **start, off_t off, int count,
+int *eof, void *data)
+{
+        int written;
+        current->files = NULL;
+        written = sprintf(page+off, "jiffies=%d\n", jiffies);
+        return written;
+}
+=======================================
+
+
+
+

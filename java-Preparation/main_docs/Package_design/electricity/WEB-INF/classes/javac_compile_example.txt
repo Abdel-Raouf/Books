@@ -1,0 +1,12 @@
+This file contains an example of compiling source files for this application, from the 
+command line, using javac. It places .class files in the default location, 
+in the same directory as the corresponding .java file.
+
+This command MUST be run from the same directory in which this file resides.
+
+Please edit this example to suit your environment. 
+If you deploy to Tomcat 6, you will need to compile using JDK 1.5!
+Note as well that you need to point to Tomcat's servlet-api.jar.
+(Including servlet-api.jar in WEB-INF leads to conflict errors with Tomcat's version of those classes.)
+
+[ELEC_HOME]/WEB-INF/classes/>C:\jdk1.5.0\bin\javac.exe -cp .;../lib/web4j.jar;"C:\Program Files\Tomcat6\lib\servlet-api.jar"  hirondelle/electricity/main/report/*.java hirondelle/electricity/main/home/*.java hirondelle/electricity/codes/*.java hirondelle/electricity/util/*.java hirondelle/web4j/config/*.java

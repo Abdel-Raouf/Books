@@ -1,0 +1,137 @@
+Encapsulation:
+-------------
+you protect your data by only allowing your chosen methods to interact with it so something else can't come along and change values
+let's say you have a clock class that tracks hours and minutes
+if the data is not protected, someone can come and set clock.minutes = 75
+but minutes should be between 0 and 59 for your business rules
+so instead of allowing others to change the value directly
+instead they have to go through a method
+in that method you can put validations and other code
+so you can enforce that minutes are between 0 and 59 by throwing errors or whatever needed
+
+
+Inheritance & COnstructor:
+-------------------------
+The private modifier specifies that the member can only be directly accessed in its own class. 
+The protected modifier specifies that the member can only be directly accessed within its own package(as with package-private) and, in addition, by a subclass of its class in another package.
+direct vs indirect access
+Access modifiers affect direct access to that member of a class.
+/***************************************/
+class SuperType {
+    private int item;
+    public void setItem(int item){
+        this.item = item +2;
+    }
+    public int getItem(){
+        return item;
+    }
+}
+
+public class SubType extends SuperType{
+    @Override
+    public void setItem(int item){
+        super.setitem(item+5);
+    }		
+    public static void main(String[] args){
+        SubType s = new SubType(); 
+        s.setItem(2);
+        System.out.println(s.getItem());
+
+    }
+}
+/*****************************************/
+In line,
+SubType s2 = new SuperType(); //false because Java compiler knows that SuperType is not SubType at compile time.
+static stype is 'class SubType' and dynamic type is 'class SuperType'.
+In line,
+SuperType s1 = new SubType(); //true because Java compiler knows that SubType is SuperType at compile time as inheritance define is-a relation
+static stype is 'class SuperType' and dynamic type is 'class SubType'.
+
+SubType can get indirect access to 'item' of SuperType, through the 'public getItem()' method, which exists in SuperType and thus has access to the private 'item' member variable.
+But SubType can't directly access it, i.e. this is an error if in SubType: s.item  // error; private in SuperType
+There is a difference in overriding & inheriting a method in SubType. 
+Inherited method can directly access private members of SuperType, overridden method cannot directly access private member of SuperType.
+
+SubType constructor calls SuperType constructor by default, or 'super(6)' would call another SuperType constructor.
+Overridden method in SubType can call SuperType's setItem() method as 'super.setItem(item)', to set the member's value indirectly.
+
+
+Why Dynamic Method look-up matters?
+----------------------------------
+When we invoke overridden method using 'class SuperType' reference, java calls method for the object's dynamic type, regardless of static type which is `class SuperType`.
+For example, if deleteitem() is added to 'class SubType' then,
+SuperType s = new SubType(); //looks fine
+s.deleteItem(); //Not fine, because this is not overridden method and not part of SuperType's reference view.
+
+Maintenance of code becomes easy with minimal changes when you add another new subtype in the hierarchy.
+Type casting change the static type in an expression but not the original variable.
+'instanceof' keyword is a binary operator used to test if an object (instance) is a subtype of a given Type.
+
+
+
+Contract:
+--------
+A contract is an agreement between a code entity such as a method and the user of that code entity, regarding how it may be used, and what services the code entity will provide.
+The type signature in statically typed languages encodes a part of the contract. For example "int foo(int a, int b)" has the contract that it will take two integer arguments and
+return an integer result. However, the docs may add additional requirements, e.g. the inputs must be non-negative.
+
+Problems can arise if the implementer is not aware that there ought to be a contract (e.g. if we "return a / b", then b must not be zero), if the contract is not explicit (“oh, sorry, 
+I forgot to tell you this function doesn't work on Feb. 29”), if the user is not aware of the contract (“why should I read the docs?”), or when the contract is not enforced (“garbage in, garbage out” doesn't make for solid software. If you receive garbage, throw an error).
+
+Any of these scenarios makes the resulting software more fragile, which can lead to hard to locate bugs. Depending on what kind of software you're writing, results can range from merely 
+annoying to life-threatening. A common example of “the implementer is not aware that there should be an enforced contract” is when someone forgets to sanitize the input, and opens up a 
+web comment form to XSS attacks, or a privileged program to shell injection.
+
+the "Heartbleed vulnerability" was one of these. There was a contract that a length field ought to be correct – but OpenSSL did not enforce this contract by performing bounds checking. 
+The resulting buffer overflow could leak private keys of a server and other private data.
+
+Contracts are independent from the programming paradigm. But in OOP languages, we have the ability to create subtypes (i.e. do inheritance). When we inherit from a class or interface, 
+we do not only inherit the interface and behaviour but also all contracts. The Liskov Subsitution Principle says that a well-behaved subtype must fulfil all contracts of its parent types.
+
+
+Abstraction:
+-----------
+Abstraction is more about taking common functionality out of multiple places and putting it into a single common place instead and using inheritance (or something similar) to have that common functionality refer to the single class
+
+'class Object' doesn't really have any abstraction to it. It is something there because everything needs to inherit from object and there needs to be some base functionality (equals, hashcode) to make the system work.
+Note that Java's class hierarchy isn't about abstract classes in most cases, its about interfaces.
+(most of the times I've seen an abstract class in code, its been a mistake to make it an abstract class)
+Let me rephrase that a bit... abstract classes are things to be discovered rather than designed most of the time.
+Here is class A, here is class B... and you realize that they have common functionality that really should be pulled into one place. Then you create an abstract class that holds that common functionality and extend the two subclasses from it.
+But the thing is to write class A and class B first and then refactor if it is appropriate.
+When you start out with the abstract class and then try to extend it, you'll find yourself writing so many cases and exceptions that it gets convoluted.
+You write code, and then you refactor. That is 'real time'. You're not sitting in front of a clock.
+You could leave A and B as they are (and honestly, many times time pressure does just that). But that means later when you need to modify the common functionality, you have to modify it in two places.
+
+Thinking about hierarchies is... challenging. Its rarely true that you'll find yourself with a deep class structure except in contrived problems.
+For most cases, hierarchies and such make for inflexible code designs because small changes affect many more things.
+
+
+
+Abstract Data Type:
+-------------------
+The _interface_ of a class is a set of prototypes for public methods (and sometimes public fields), plus descriptions of the methods’ behaviors(plain english).
+So, interface is an instruction to your programming partner or yourself, to make sure understand, How your code works? How to call your methods?
+
+An _Abstract_Data_Type_ (ADT) is a class that has a well-defined interface, but its implementation details are firmly hidden from other classes. That way, you can change the implementation of a class without jeopardizing the programs that depend on it. The Date class is an ADT. We’ll implement lots of ADTs this semester.
+
+ADT allows you to enforce invariants.
+
+An _invariant_ is a fact about a data structure that is always true (assuming the code is bug-free), no matter what methods are called by external classes.
+For example, the Date ADT enforces the invariant that a Date object always represents a valid date. An invariant is enforced by allowing access to certain fields only through method calls.
+
+An ADT is often a good thing to aspire to. In most of your classes, you should declare all fields private, as well as helper functions meant only for internal use, so that you can maintain sensible invariants on your data structures.
+
+However, not all classes are ADTs! Some classes are nothing more than data storage units, and do not need to enforce any invariants. In such classes, all fields may be declared public.
+
+
+
+
+
+
+
+
+
+
+
+

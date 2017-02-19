@@ -1,0 +1,86 @@
+
+			KERNEL DEBUGGING
+			================
+
+
+debugging the kernel is an hard task, because ?
+==================================================
+
+    * the kernel is BIG (millions of lines)
+    * the kernel is very complex (multithreaded,
+      hardware-related, ...)
+    * there is no higher program that monitors it
+
+Fixing a kernel bug involves three different steps:
+=======================================================
+    1. finding where the bug showed itself
+    2. understanding what is wrong with the existing code
+    3. fixing the code
+
+steps 1 and 3 are relatively easy, while step 2 is hairy.
+
+Example 1. The "test_chrdev" program hangs up
+=======================================================
+If "test_chrdev" is in foreground, it cannot be stopped or killed. 
+But we can use the "ps" command to collect some information about it:
+
+$ ps u -C test_chrdev
+USER       PID %CPU %MEM   VSZ  RSS TTY      STAT START   TIME COMMAND
+root     208  0.0  0.1  1200  312 pts/1    D    18:35   0:00 ./test_chrdev
+
+"ps" options:-
+	-C  --- Select by command name
+	u  ---- display user-oriented format
+
+The "D" flag gives us two bits of information:
+
+1. the process is in Kernel Mode
+2. the process is in TASK_UNINTERRUPTIBLE state
+
+While in Kernel Mode, the process can be in one of the following states:
+
+    TASK_RUNNING            running or waiting for the CPU
+    TASK_INTERRUPTIBLE      waiting for some event, interruptible by signals
+    TASK_UNINTERRUPTIBLE    waiting for some event, not interruptible
+    TASK_STOPPED            stopped by a signal or terminal keypress (Ctrl-Z)
+    TASK_ZOMBIE             execution terminated, waiting to be destroyed
+
+$ ps n -o pid,tt,user,fname,wchan -C mystery1
+  PID TT           USER COMMAND   WCHAN
+  208 pts/1        1000 test_chrdev 161dad
+
+The WCHAN field is the information we need: it denotes the "wait
+channel" of the process, namely, an offset of a function where the
+process is blocked. The "n" flag of "ps" forces numerical output, thus
+161dad must be interpreted as hex number 0x161dad.
+
+Without the "n" flag, "ps" will search the System.map file and translate the
+address by yourself:
+
+$ ps -o pid,tt,user,fname,wchan -C test_chrdev
+  PID TT       USER     COMMAND  	WCHAN
+  208 pts/1    root   test_chrdev schedule_timeout
+
+WARNING: be sure that "ps" looks at the right System.map file before using the
+symbolic name! In our case, "ps" looks at the wrong file, therefore it gives
+a wrong result. Using the correct System.map file yields:
+
+$ ps -o pid,tt,user,fname,wchan -C mystery1
+  PID TT       USER     COMMAND  WCHAN
+  208 pts/1    root   test_chrdev noninterruptible_delay
+
+We eventually found where our process is blocked: the sleep_on_timeout()
+function, which puts the current process in TASK_UNINTERRUPTIBLE state
+until either it is awakened by another process, or a timeout expires.
+
+Now step 2 can start: how is the kernel behaving? From its definition, it is
+quite clear that the parameter "seconds" represents the timeout in seconds.
+However, there is a mistake in the invocation of sleep_on_timeout(), because
+this function expects a time interval in ticks.
+
+Step 3 is also trivial: just replace the wrong line with:
+
+    sleep_on_timeout(&wait, seconds*HZ);
+
+
+

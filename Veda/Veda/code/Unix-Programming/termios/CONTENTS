@@ -1,0 +1,35 @@
+test1.c -- to show the controlling terminal.
+
+test2.c -- to show how to find whether a file descriptor is a tty or not.
+
+
+test3.c -- to show how we can use different terminal settings.
+
+
+setterm.c  -- to show how we can change terminal settings depending on
+	      our requirements.
+
+seteoff.c -- shows how to stop echoing the char's read.
+
+
+setcon.c -- shows how to print control chars.
+
+
+setraw.c -- shows how to set the terminal in raw mode.
+
+
+Terminals will be connected to the serial port of the system. 
+We can 
+
+Connect devices like modems, LCD displays and variety of devices to the
+
+serial port. We can use termios to send data to these devices.
+ In most
+of the cases we will make use of raw mode to pass the data to these
+ 
+devices without processing (Any how it depends on situation).
+
+
+Note : To Develop Applications with UI on terminals 
+we can make use
+of curses (ncurses) library or a high level API like CDK.

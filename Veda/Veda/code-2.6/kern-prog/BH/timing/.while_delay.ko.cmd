@@ -1,0 +1,1 @@
+cmd_/root/Code-2.6/kernel-prog/timing/while_delay.ko := ld -m elf_i386 -r -o /root/Code-2.6/kernel-prog/timing/while_delay.ko /root/Code-2.6/kernel-prog/timing/while_delay.o /root/Code-2.6/kernel-prog/timing/while_delay.mod.o

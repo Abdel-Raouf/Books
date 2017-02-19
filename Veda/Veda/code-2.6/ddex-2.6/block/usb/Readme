@@ -1,0 +1,30 @@
+Functions and Srtuctures necessary for writing USB Drivers are listed in the following:
+
+1. struct usb_driver 
+	Identifies the USB driver to the USB subsystem.
+	Declared in linux/usb.h
+
+2. int usb_register (struct usb_driver *)
+   void usb_register (struct usb_driver *)
+
+	Registers and Deregisters USB drivers with/from USB subsystem.
+
+3. struct urb
+	Data is transferred from HOST to DEVICE through a mechanism known as
+	URB[ USB Request Block ]. This structure is used when sending data to
+	device.
+
+4. FILL_BULK_URB
+	Initializes a bulk urb with proper information needed to submit it to
+	the device. As this macro is deprecated driver developers need to use
+	"usb_fill_bulk_urb" which performs the same task. Similarly for 
+	interrupt and control we've usb_fill_int_urb an usb_fill_control_urb.
+	This is asynchronous by nature.
+
+5. int usb_submit_urb(struct urb *urb)
+	Send the data to the bulk-out port.
+
+6. usb_bulk_msg
+	Same as FILL_BULK_URB but waits for the completion of the operation
+	i.e synchronous.
+

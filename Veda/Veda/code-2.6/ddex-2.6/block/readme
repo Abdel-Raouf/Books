@@ -1,0 +1,17 @@
+		           2.6 Kernel Block Device Architechture
+-------------------------------------------------------------------------------------
+
+The Following are Major changes to Block Layer
+
+1. It is no longer necessary to work with a whole set of global arrays within block drivers.These arrays (blk_size, blksize_size, hardsect_size, read_ahead, etc.) have simply vanished.
+
+2. Most of the <linux/blk.h> macros (DEVICE_NAME, DEVICE_NR, CURRENT, INIT_REQUEST, etc.) have been removed; <linux/blk.h> is now empty. Any block driver which used these macros to implement its request loop will have to be rewritten
+
+3. Request queues have, in general, gotten more sophisticated
+
+4. Buffer heads are no longer used in the block layer; they have been replaced with the new "bio" structure
+
+5. Sector numbers can now be 64 bits wide, making it possible to support very large block devices
+
+6. Partition handling has been moved up into the block layer, and drivers no longer need know anything about partitions
+

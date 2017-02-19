@@ -1,0 +1,18 @@
+FETCH_RESTO_CODES {
+ SELECT Id, Name
+ FROM Resto
+ ORDER BY Name
+}
+
+TRANSLATION.FETCH_LOCALE_CODES {
+ SELECT Id, ShortForm, Description
+ FROM Locale
+ ORDER BY Id
+}
+
+FETCH_DISPOSITION_CODES {
+ SELECT Id, Text, ShortText
+ FROM Disposition
+ ORDER BY Text
+}
+

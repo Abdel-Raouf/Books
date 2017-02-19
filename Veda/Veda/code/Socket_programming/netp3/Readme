@@ -1,0 +1,25 @@
+Description of the Application-level protocol used by Fortune-Teller
+Server and Client.
+
+--------------------------------------------------------------------------
+1. Client Established connection with Server.
+
+2. Server sends a Greeting Message to client.
+
+	(i)First Two bytes of the Message Should consist of length info.
+
+3. Client has to send the some text to Server as a message.
+	
+	(i)First Two bytes of the Message Should consist of length info.
+
+4. Server sends message to the client and closes the connection.
+---------------------------------------------------------------------------
+In the above protocol all the messages that are passed between Client and
+Server will be in the following Format.
+
+	struct message{
+		short sizeofmsg;
+		void *message;
+	}
+----------------------------------------------------------------------------
+

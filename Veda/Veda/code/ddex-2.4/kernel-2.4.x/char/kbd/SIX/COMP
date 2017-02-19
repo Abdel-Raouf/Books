@@ -1,0 +1,1 @@
+gcc -c -O6 -I/usr/src/linux-2.4/include -I. kboard.c -o kboard.o

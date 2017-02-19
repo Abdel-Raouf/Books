@@ -1,0 +1,96 @@
+/* Called when ./snull_load  is executed
+snull_init(device[sn0]) - In
+snull_init(device[sn0]) - Out
+
+snull_stats(device[sn0]) - In
+snull_stats(device[sn0]) - Out
+
+snull_init(device[sn1]) - In
+snull_init(device[sn1]) - Out
+
+snull_stats(device[sn1]) - In
+snull_stats(device[sn1]) - Out
+
+// ifconfig sn0 local0 up
+snull_open(net_device[sn0]) - In
+snull_open(net_device[sn0]) - Out
+
+snull_stats(device[sn0]) - In
+snull_stats(device[sn0]) - Out
+
+snull_stats(device[sn0]) - In
+snull_stats(device[sn0]) - Out
+
+// ifconfig sn0 local1 up
+snull_open(net_device[sn1]) - In
+snull_open(net_device[sn1]) - Out
+
+snull_stats(device[sn1]) - In
+snull_stats(device[sn1]) - Out
+
+snull_stats(device[sn1]) - In
+snull_stats(device[sn1]) - Out
+
+
+// ping remote0 -c 1
+->PING remote0 (192.168.0.2) 56(84) bytes of data.
+
+snull_header(sk_buff[device-sn0], device[sn0], type[2048], 
+	     daddr[1], saddr[0], len[84]) - In
+snull_header(sk_buff[device-sn0], device[sn0], type[2048], 
+             daddr[1], saddr[0], len[84]) - Out
+
+snull_tx(sk_buff, device[sn0]) - In
+	snull_hw_tx(string[0], len[98], device[sn0]) - In
+		snull_interrupt(irq[0], dev_id[sn1], pt_regs) - In
+			snull_rx(net_device[sn1], len[98], string[0]) - In
+			snull_rx(net_device[sn1], len[98], string[0]) - Out
+		snull_interrupt(irq[0], dev_id[sn1], pt_regs) - Out
+		snull_interrupt(irq[0], dev_id[sn0], pt_regs) - In
+		snull_interrupt(irq[0], dev_id[sn0], pt_regs) - Out
+	snull_hw_tx(string[0], len[98], device[sn0]) - Out
+snull_tx(sk_buff, device[sn0]) - Out
+
+snull_header(sk_buff[device-sn1], device[sn1], type[2048], 
+	     daddr[1], saddr[0], len[84]) - In
+snull_header(sk_buff[device-sn1], device[sn1], type[2048], 
+             daddr[1], saddr[0], len[84]) - Out
+
+snull_tx(sk_buff, device[sn1]) - In
+	snull_hw_tx(string[0], len[98], device[sn1]) - In
+		snull_interrupt(irq[0], dev_id[sn0], pt_regs) - In
+			snull_rx(net_device[sn0], len[98], string[0]) - In
+			snull_rx(net_device[sn0], len[98], string[0]) - Out
+		snull_interrupt(irq[0], dev_id[sn0], pt_regs) - Out
+		snull_interrupt(irq[0], dev_id[sn1], pt_regs) - In
+		snull_interrupt(irq[0], dev_id[sn1], pt_regs) - Out
+	snull_hw_tx(string[0], len[98], device[sn1]) - Out
+snull_tx(sk_buff, device[sn1]) - Out
+
+->64 bytes from remote0 (192.168.0.2): icmp_seq=1 ttl=64 time=0.446 ms
+
+
+// Called when ./snull_unload is called
+snull_release(net_device[sn0]) - In
+snull_release(net_device[sn0]) - Out
+
+snull_stats(device[sn0]) - In
+snull_stats(device[sn0]) - Out
+
+snull_stats(device[sn0]) - In
+snull_stats(device[sn0]) - Out
+
+snull_release(net_device[sn1]) - In
+snull_release(net_device[sn1]) - Out
+
+snull_stats(device[sn1]) - In
+snull_stats(device[sn1]) - Out
+
+snull_stats(device[sn1]) - In
+snull_stats(device[sn1]) - Out
+
+snull_stats(device[sn0]) - In
+snull_stats(device[sn0]) - Out
+
+snull_stats(device[sn1]) - In
+snull_stats(device[sn1]) - Out

@@ -1,0 +1,83 @@
+<html>
+<body>
+<center><h1>Pseudo Network Interfaces</h1></center>
+
+
+<h2>Aim</h2>
+<p>
+To write a pseudo network device.
+</p>
+
+<h2>Synopsis</h2>
+<p>
+A network device is consulted when packets have to be transfered from one host to another 
+host. In this example we write two network interface modules by name <b>lin1</b> and <b>lin2</b>
+that will have IP addresses <b>local0 (192.168.0.1)</b> and <b>local1 (192.168.1.2)</b> respectively.
+<b>lin1</b> belongs to a network <b>192.168.0.0</b>; while <b>lin2</b> belongs to network 
+<b>192.168.1.0</b>
+</p>
+
+<p>
+To simulate network packet transfes we create a virtual hardware layer, over which the network
+interfaces work. The code for the hardware layer is in <a href="../../examples/I_labs/lin_net/lin_net_device.c">lin_net_device.c</a>; 
+and the code for network interfaces <b>lin1</b> and <b>lin2</b> is 
+lin_net1.c</a> and 
+<a href="../../examples/I_labs/lin_net/lin_net2.c">lin_net2.c</a>.
+</p>
+
+<p>
+A schematic diagram of the architecture is given below
+</p>
+
+<img src="network.jpg" border=0>
+
+<p>
+The rule here is that every network interface should register itself with the virtual hardware
+layer before it can transfer packets. After registration, writing data to the hardware is done
+using <code>write_to_hardware()</code> function which is exported from <code>lin_net_device.c</code>.
+To read from the hardware <code>read_from_hardware()</code> function is used.
+</p>
+
+<p>
+In real network devices, the hardware generates an interrupt when a new packet of data is ready to be
+read from the device. Network interfaces register the interrupt handler for this IRQ. This 
+interrupt handler then runs low level routines (like <code>read_from_hardware()</code>) to read
+from the hardware.
+</p>
+
+<p>In this example, while registering an interrupt function is sent as parameter. When
+the data is ready, the interrupt function is invoked by the virtual hardware layer</p>
+
+<h2>Bugs and limitations</h2>
+The module does not show the implementation on a real hardware.
+
+<h2>Steps to test the module</h2>
+<p>
+<ol>
+
+<li>Compile the modules <code>lin_net1.c, lin_net2.c and lin_net_device.c</code> using <code>gcc</code> 
+<li>Add the following lines to /etc/networks<br>
+	<pre>
+	linnet0		192.168.0.0
+	linnet1		192.168.1.0
+	</pre>
+<li>Add the following lines to /etc/hosts<br>
+	<pre>
+	192.168.0.1		local0
+	192.168.0.2		remote0
+	192.168.1.2		remote1
+	192.168.1.1		local1
+	</pre>
+
+<li>Ping the remote machine remote0 or remote1 using
+	<code># ping remote0<br>
+		  # ping remote1</code></li>
+
+</ol>
+</p>
+
+</body>
+
+</body>
+
+</html>

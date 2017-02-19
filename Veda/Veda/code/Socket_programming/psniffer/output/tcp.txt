@@ -1,0 +1,1328 @@
+Mon May 17 12:56:31 IST 2004
+	 ----------------------------------
+source port no : 32772
+destination port no : 8000
+seq number : 2014812328
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:31 IST 2004
+	 ----------------------------------
+source port no : 32772
+destination port no : 8000
+seq number : 2014812328
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:31 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 32772
+seq number : 2011789645
+ack number : 2014812329
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:31 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 32772
+seq number : 2011789645
+ack number : 2014812329
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:31 IST 2004
+	 ----------------------------------
+source port no : 32772
+destination port no : 8000
+seq number : 2014812329
+ack number : 2011789646
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:31 IST 2004
+	 ----------------------------------
+source port no : 32772
+destination port no : 8000
+seq number : 2014812329
+ack number : 2011789646
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:31 IST 2004
+	 ----------------------------------
+source port no : 32772
+destination port no : 8000
+seq number : 2014812329
+ack number : 2011789646
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:31 IST 2004
+	 ----------------------------------
+source port no : 32772
+destination port no : 8000
+seq number : 2014812329
+ack number : 2011789646
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:31 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 32772
+seq number : 2011789646
+ack number : 2014812330
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:31 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 32772
+seq number : 2011789646
+ack number : 2014812330
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:31 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 32772
+seq number : 2011789646
+ack number : 2014812330
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:31 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 32772
+seq number : 2011789646
+ack number : 2014812330
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:31 IST 2004
+	 ----------------------------------
+source port no : 32772
+destination port no : 8000
+seq number : 2014812330
+ack number : 0
+window size : 0
+	 ----------------------------------
+Mon May 17 12:56:31 IST 2004
+	 ----------------------------------
+source port no : 32772
+destination port no : 8000
+seq number : 2014812330
+ack number : 0
+window size : 0
+	 ----------------------------------
+Mon May 17 12:56:33 IST 2004
+	 ----------------------------------
+source port no : 32773
+destination port no : 8000
+seq number : 2012536861
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:33 IST 2004
+	 ----------------------------------
+source port no : 32773
+destination port no : 8000
+seq number : 2012536861
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:33 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 32773
+seq number : 2007586758
+ack number : 2012536862
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:33 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 32773
+seq number : 2007586758
+ack number : 2012536862
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:33 IST 2004
+	 ----------------------------------
+source port no : 32773
+destination port no : 8000
+seq number : 2012536862
+ack number : 2007586759
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:33 IST 2004
+	 ----------------------------------
+source port no : 32773
+destination port no : 8000
+seq number : 2012536862
+ack number : 2007586759
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:33 IST 2004
+	 ----------------------------------
+source port no : 32773
+destination port no : 8000
+seq number : 2012536862
+ack number : 2007586759
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:33 IST 2004
+	 ----------------------------------
+source port no : 32773
+destination port no : 8000
+seq number : 2012536862
+ack number : 2007586759
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:33 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 32773
+seq number : 2007586759
+ack number : 2012536863
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:33 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 32773
+seq number : 2007586759
+ack number : 2012536863
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:33 IST 2004
+	 ----------------------------------
+source port no : 32773
+destination port no : 8000
+seq number : 2012536863
+ack number : 0
+window size : 0
+	 ----------------------------------
+Mon May 17 12:56:33 IST 2004
+	 ----------------------------------
+source port no : 32773
+destination port no : 8000
+seq number : 2012536863
+ack number : 0
+window size : 0
+	 ----------------------------------
+Mon May 17 12:56:33 IST 2004
+	 ----------------------------------
+source port no : 32774
+destination port no : 8000
+seq number : 2009288863
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:33 IST 2004
+	 ----------------------------------
+source port no : 32774
+destination port no : 8000
+seq number : 2009288863
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:33 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 32774
+seq number : 2011345215
+ack number : 2009288864
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:33 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 32774
+seq number : 2011345215
+ack number : 2009288864
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:33 IST 2004
+	 ----------------------------------
+source port no : 32774
+destination port no : 8000
+seq number : 2009288864
+ack number : 2011345216
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:33 IST 2004
+	 ----------------------------------
+source port no : 32774
+destination port no : 8000
+seq number : 2009288864
+ack number : 2011345216
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:33 IST 2004
+	 ----------------------------------
+source port no : 32774
+destination port no : 8000
+seq number : 2009288864
+ack number : 2011345216
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:33 IST 2004
+	 ----------------------------------
+source port no : 32774
+destination port no : 8000
+seq number : 2009288864
+ack number : 2011345216
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:33 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 32774
+seq number : 2011345216
+ack number : 2009288865
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:34 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 32774
+seq number : 2011345216
+ack number : 2009288865
+window size : 32767
+	 ----------------------------------
+Mon May 17 12:56:34 IST 2004
+	 ----------------------------------
+source port no : 32774
+destination port no : 8000
+seq number : 2009288865
+ack number : 0
+window size : 0
+	 ----------------------------------
+Mon May 17 12:56:34 IST 2004
+	 ----------------------------------
+source port no : 32774
+destination port no : 8000
+seq number : 2009288865
+ack number : 0
+window size : 0
+	 ----------------------------------
+Mon May 17 13:00:04 IST 2004
+	 ----------------------------------
+source port no : 32776
+destination port no : 8000
+seq number : 2226154071
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Mon May 17 13:00:04 IST 2004
+	 ----------------------------------
+source port no : 32776
+destination port no : 8000
+seq number : 2226154071
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Mon May 17 13:00:04 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 32776
+seq number : 2226041270
+ack number : 2226154072
+window size : 32767
+	 ----------------------------------
+Mon May 17 13:00:04 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 32776
+seq number : 2226041270
+ack number : 2226154072
+window size : 32767
+	 ----------------------------------
+Mon May 17 13:00:04 IST 2004
+	 ----------------------------------
+source port no : 32776
+destination port no : 8000
+seq number : 2226154072
+ack number : 2226041271
+window size : 32767
+	 ----------------------------------
+Mon May 17 13:00:04 IST 2004
+	 ----------------------------------
+source port no : 32776
+destination port no : 8000
+seq number : 2226154072
+ack number : 2226041271
+window size : 32767
+	 ----------------------------------
+Mon May 17 13:00:04 IST 2004
+	 ----------------------------------
+source port no : 32776
+destination port no : 8000
+seq number : 2226154072
+ack number : 2226041271
+window size : 32767
+	 ----------------------------------
+Mon May 17 13:00:04 IST 2004
+	 ----------------------------------
+source port no : 32776
+destination port no : 8000
+seq number : 2226154072
+ack number : 2226041271
+window size : 32767
+	 ----------------------------------
+Mon May 17 13:00:04 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 32776
+seq number : 2226041271
+ack number : 2226154073
+window size : 32767
+	 ----------------------------------
+Mon May 17 13:00:04 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 32776
+seq number : 2226041271
+ack number : 2226154073
+window size : 32767
+	 ----------------------------------
+Mon May 17 13:00:04 IST 2004
+	 ----------------------------------
+source port no : 32776
+destination port no : 8000
+seq number : 2226154073
+ack number : 0
+window size : 0
+	 ----------------------------------
+Mon May 17 13:00:04 IST 2004
+	 ----------------------------------
+source port no : 32776
+destination port no : 8000
+seq number : 2226154073
+ack number : 0
+window size : 0
+	 ----------------------------------
+Thu Jun  3 08:08:47 IST 2004
+	 ----------------------------------
+source port no : 33491
+destination port no : 631
+seq number : 1396655070
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Thu Jun  3 08:08:47 IST 2004
+	 ----------------------------------
+source port no : 33491
+destination port no : 631
+seq number : 1396655070
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Thu Jun  3 08:08:47 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33491
+seq number : 0
+ack number : 1396655071
+window size : 0
+	 ----------------------------------
+Thu Jun  3 08:08:47 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33491
+seq number : 0
+ack number : 1396655071
+window size : 0
+	 ----------------------------------
+Thu Jun  3 08:08:52 IST 2004
+	 ----------------------------------
+source port no : 33492
+destination port no : 631
+seq number : 1404537811
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Thu Jun  3 08:08:52 IST 2004
+	 ----------------------------------
+source port no : 33492
+destination port no : 631
+seq number : 1404537811
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Thu Jun  3 08:08:52 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33492
+seq number : 0
+ack number : 1404537812
+window size : 0
+	 ----------------------------------
+Thu Jun  3 08:08:52 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33492
+seq number : 0
+ack number : 1404537812
+window size : 0
+	 ----------------------------------
+Thu Jun  3 08:08:57 IST 2004
+	 ----------------------------------
+source port no : 33493
+destination port no : 631
+seq number : 1407125400
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Thu Jun  3 08:08:57 IST 2004
+	 ----------------------------------
+source port no : 33493
+destination port no : 631
+seq number : 1407125400
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Thu Jun  3 08:08:57 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33493
+seq number : 0
+ack number : 1407125401
+window size : 0
+	 ----------------------------------
+Thu Jun  3 08:08:58 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33493
+seq number : 0
+ack number : 1407125401
+window size : 0
+	 ----------------------------------
+Thu Jun  3 08:09:02 IST 2004
+	 ----------------------------------
+source port no : 33494
+destination port no : 631
+seq number : 1415713748
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Thu Jun  3 08:09:02 IST 2004
+	 ----------------------------------
+source port no : 33494
+destination port no : 631
+seq number : 1415713748
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Thu Jun  3 08:09:02 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33494
+seq number : 0
+ack number : 1415713749
+window size : 0
+	 ----------------------------------
+Thu Jun  3 08:09:03 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33494
+seq number : 0
+ack number : 1415713749
+window size : 0
+	 ----------------------------------
+Thu Jun  3 08:09:07 IST 2004
+	 ----------------------------------
+source port no : 33495
+destination port no : 631
+seq number : 1435482767
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Thu Jun  3 08:09:07 IST 2004
+	 ----------------------------------
+source port no : 33495
+destination port no : 631
+seq number : 1435482767
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Thu Jun  3 08:09:07 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33495
+seq number : 0
+ack number : 1435482768
+window size : 0
+	 ----------------------------------
+Thu Jun  3 08:09:08 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33495
+seq number : 0
+ack number : 1435482768
+window size : 0
+	 ----------------------------------
+Thu Jun  3 08:09:12 IST 2004
+	 ----------------------------------
+source port no : 33496
+destination port no : 631
+seq number : 1434301822
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Thu Jun  3 08:09:12 IST 2004
+	 ----------------------------------
+source port no : 33496
+destination port no : 631
+seq number : 1434301822
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Thu Jun  3 08:09:12 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33496
+seq number : 0
+ack number : 1434301823
+window size : 0
+	 ----------------------------------
+Thu Jun  3 08:09:13 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33496
+seq number : 0
+ack number : 1434301823
+window size : 0
+	 ----------------------------------
+Thu Jun  3 08:09:17 IST 2004
+	 ----------------------------------
+source port no : 33497
+destination port no : 631
+seq number : 1451120712
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Thu Jun  3 08:09:17 IST 2004
+	 ----------------------------------
+source port no : 33497
+destination port no : 631
+seq number : 1451120712
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Thu Jun  3 08:09:18 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33497
+seq number : 0
+ack number : 1451120713
+window size : 0
+	 ----------------------------------
+Thu Jun  3 08:09:18 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33497
+seq number : 0
+ack number : 1451120713
+window size : 0
+	 ----------------------------------
+Thu Jun  3 08:09:22 IST 2004
+	 ----------------------------------
+source port no : 33498
+destination port no : 631
+seq number : 1456042647
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Thu Jun  3 08:09:22 IST 2004
+	 ----------------------------------
+source port no : 33498
+destination port no : 631
+seq number : 1456042647
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Thu Jun  3 08:09:23 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33498
+seq number : 0
+ack number : 1456042648
+window size : 0
+	 ----------------------------------
+Thu Jun  3 08:09:23 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33498
+seq number : 0
+ack number : 1456042648
+window size : 0
+	 ----------------------------------
+Thu Jun  3 08:09:27 IST 2004
+	 ----------------------------------
+source port no : 33499
+destination port no : 631
+seq number : 1453894337
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Thu Jun  3 08:09:28 IST 2004
+	 ----------------------------------
+source port no : 33499
+destination port no : 631
+seq number : 1453894337
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Thu Jun  3 08:09:28 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33499
+seq number : 0
+ack number : 1453894338
+window size : 0
+	 ----------------------------------
+Thu Jun  3 08:09:28 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33499
+seq number : 0
+ack number : 1453894338
+window size : 0
+	 ----------------------------------
+Thu Jun  3 08:09:32 IST 2004
+	 ----------------------------------
+source port no : 33500
+destination port no : 631
+seq number : 1463814772
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Thu Jun  3 08:09:33 IST 2004
+	 ----------------------------------
+source port no : 33500
+destination port no : 631
+seq number : 1463814772
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Thu Jun  3 08:09:33 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33500
+seq number : 0
+ack number : 1463814773
+window size : 0
+	 ----------------------------------
+Thu Jun  3 08:09:33 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33500
+seq number : 0
+ack number : 1463814773
+window size : 0
+	 ----------------------------------
+Thu Jun  3 08:09:37 IST 2004
+	 ----------------------------------
+source port no : 33501
+destination port no : 631
+seq number : 1460585178
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Thu Jun  3 08:09:38 IST 2004
+	 ----------------------------------
+source port no : 33501
+destination port no : 631
+seq number : 1460585178
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Thu Jun  3 08:09:38 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33501
+seq number : 0
+ack number : 1460585179
+window size : 0
+	 ----------------------------------
+Thu Jun  3 08:09:38 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33501
+seq number : 0
+ack number : 1460585179
+window size : 0
+	 ----------------------------------
+Thu Jun  3 08:09:42 IST 2004
+	 ----------------------------------
+source port no : 33502
+destination port no : 631
+seq number : 1466151638
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Thu Jun  3 08:09:43 IST 2004
+	 ----------------------------------
+source port no : 33502
+destination port no : 631
+seq number : 1466151638
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Thu Jun  3 08:09:43 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33502
+seq number : 0
+ack number : 1466151639
+window size : 0
+	 ----------------------------------
+Thu Jun  3 08:09:43 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33502
+seq number : 0
+ack number : 1466151639
+window size : 0
+	 ----------------------------------
+Thu Jun  3 08:09:47 IST 2004
+	 ----------------------------------
+source port no : 33503
+destination port no : 631
+seq number : 1477829902
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Thu Jun  3 08:09:48 IST 2004
+	 ----------------------------------
+source port no : 33503
+destination port no : 631
+seq number : 1477829902
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Thu Jun  3 08:09:48 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33503
+seq number : 0
+ack number : 1477829903
+window size : 0
+	 ----------------------------------
+Thu Jun  3 08:09:48 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33503
+seq number : 0
+ack number : 1477829903
+window size : 0
+	 ----------------------------------
+Thu Jun  3 08:09:53 IST 2004
+	 ----------------------------------
+source port no : 33504
+destination port no : 631
+seq number : 1476188836
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Thu Jun  3 08:09:53 IST 2004
+	 ----------------------------------
+source port no : 33504
+destination port no : 631
+seq number : 1476188836
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Thu Jun  3 08:09:53 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33504
+seq number : 0
+ack number : 1476188837
+window size : 0
+	 ----------------------------------
+Thu Jun  3 08:09:53 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33504
+seq number : 0
+ack number : 1476188837
+window size : 0
+	 ----------------------------------
+Fri Jul 16 20:03:52 IST 2004
+	 ----------------------------------
+source port no : 33964
+destination port no : 631
+seq number : 1130728293
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:03:52 IST 2004
+	 ----------------------------------
+source port no : 33964
+destination port no : 631
+seq number : 1130728293
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:03:52 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33964
+seq number : 0
+ack number : 1130728294
+window size : 0
+	 ----------------------------------
+Fri Jul 16 20:03:52 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33964
+seq number : 0
+ack number : 1130728294
+window size : 0
+	 ----------------------------------
+Fri Jul 16 20:03:57 IST 2004
+	 ----------------------------------
+source port no : 33965
+destination port no : 631
+seq number : 1136137554
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:03:57 IST 2004
+	 ----------------------------------
+source port no : 33965
+destination port no : 631
+seq number : 1136137554
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:03:57 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33965
+seq number : 0
+ack number : 1136137555
+window size : 0
+	 ----------------------------------
+Fri Jul 16 20:03:57 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33965
+seq number : 0
+ack number : 1136137555
+window size : 0
+	 ----------------------------------
+Fri Jul 16 20:04:02 IST 2004
+	 ----------------------------------
+source port no : 33966
+destination port no : 631
+seq number : 1152370201
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:02 IST 2004
+	 ----------------------------------
+source port no : 33966
+destination port no : 631
+seq number : 1152370201
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:02 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33966
+seq number : 0
+ack number : 1152370202
+window size : 0
+	 ----------------------------------
+Fri Jul 16 20:04:02 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33966
+seq number : 0
+ack number : 1152370202
+window size : 0
+	 ----------------------------------
+Fri Jul 16 20:04:07 IST 2004
+	 ----------------------------------
+source port no : 33967
+destination port no : 631
+seq number : 1157522181
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:07 IST 2004
+	 ----------------------------------
+source port no : 33967
+destination port no : 631
+seq number : 1157522181
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:07 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33967
+seq number : 0
+ack number : 1157522182
+window size : 0
+	 ----------------------------------
+Fri Jul 16 20:04:07 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33967
+seq number : 0
+ack number : 1157522182
+window size : 0
+	 ----------------------------------
+Fri Jul 16 20:04:12 IST 2004
+	 ----------------------------------
+source port no : 33968
+destination port no : 631
+seq number : 1150694897
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:12 IST 2004
+	 ----------------------------------
+source port no : 33968
+destination port no : 631
+seq number : 1150694897
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:12 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33968
+seq number : 0
+ack number : 1150694898
+window size : 0
+	 ----------------------------------
+Fri Jul 16 20:04:12 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33968
+seq number : 0
+ack number : 1150694898
+window size : 0
+	 ----------------------------------
+Fri Jul 16 20:04:17 IST 2004
+	 ----------------------------------
+source port no : 33969
+destination port no : 631
+seq number : 1162879586
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:17 IST 2004
+	 ----------------------------------
+source port no : 33969
+destination port no : 631
+seq number : 1162879586
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:17 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33969
+seq number : 0
+ack number : 1162879587
+window size : 0
+	 ----------------------------------
+Fri Jul 16 20:04:17 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33969
+seq number : 0
+ack number : 1162879587
+window size : 0
+	 ----------------------------------
+Fri Jul 16 20:04:19 IST 2004
+	 ----------------------------------
+source port no : 33970
+destination port no : 8000
+seq number : 1156978742
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:19 IST 2004
+	 ----------------------------------
+source port no : 33970
+destination port no : 8000
+seq number : 1156978742
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:19 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 33970
+seq number : 1167029884
+ack number : 1156978743
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:19 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 33970
+seq number : 1167029884
+ack number : 1156978743
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:19 IST 2004
+	 ----------------------------------
+source port no : 33970
+destination port no : 8000
+seq number : 1156978743
+ack number : 1167029885
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:19 IST 2004
+	 ----------------------------------
+source port no : 33970
+destination port no : 8000
+seq number : 1156978743
+ack number : 1167029885
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:19 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 33970
+seq number : 1167029885
+ack number : 1156978743
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:19 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 33970
+seq number : 1167029885
+ack number : 1156978743
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:20 IST 2004
+	 ----------------------------------
+source port no : 33970
+destination port no : 8000
+seq number : 1156978743
+ack number : 1167029887
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:20 IST 2004
+	 ----------------------------------
+source port no : 33970
+destination port no : 8000
+seq number : 1156978743
+ack number : 1167029887
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:20 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 33970
+seq number : 1167029887
+ack number : 1156978743
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:20 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 33970
+seq number : 1167029887
+ack number : 1156978743
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:20 IST 2004
+	 ----------------------------------
+source port no : 33970
+destination port no : 8000
+seq number : 1156978743
+ack number : 1167029918
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:20 IST 2004
+	 ----------------------------------
+source port no : 33970
+destination port no : 8000
+seq number : 1156978743
+ack number : 1167029918
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:21 IST 2004
+	 ----------------------------------
+source port no : 33970
+destination port no : 8000
+seq number : 1156978743
+ack number : 1167029918
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:21 IST 2004
+	 ----------------------------------
+source port no : 33970
+destination port no : 8000
+seq number : 1156978743
+ack number : 1167029918
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:21 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 33970
+seq number : 1167029918
+ack number : 1156978745
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:21 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 33970
+seq number : 1167029918
+ack number : 1156978745
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:21 IST 2004
+	 ----------------------------------
+source port no : 33970
+destination port no : 8000
+seq number : 1156978745
+ack number : 1167029918
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:21 IST 2004
+	 ----------------------------------
+source port no : 33970
+destination port no : 8000
+seq number : 1156978745
+ack number : 1167029918
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:21 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 33970
+seq number : 1167029918
+ack number : 1156978752
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:21 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 33970
+seq number : 1167029918
+ack number : 1156978752
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:21 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 33970
+seq number : 1167029918
+ack number : 1156978752
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:21 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 33970
+seq number : 1167029918
+ack number : 1156978752
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:21 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 33970
+seq number : 1167029920
+ack number : 1156978752
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:21 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 33970
+seq number : 1167029920
+ack number : 1156978752
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:21 IST 2004
+	 ----------------------------------
+source port no : 33970
+destination port no : 8000
+seq number : 1156978752
+ack number : 1167029920
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:21 IST 2004
+	 ----------------------------------
+source port no : 33970
+destination port no : 8000
+seq number : 1156978752
+ack number : 1167029920
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:21 IST 2004
+	 ----------------------------------
+source port no : 33970
+destination port no : 8000
+seq number : 1156978752
+ack number : 1167029934
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:21 IST 2004
+	 ----------------------------------
+source port no : 33970
+destination port no : 8000
+seq number : 1156978752
+ack number : 1167029934
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:21 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 33970
+seq number : 1167029934
+ack number : 1156978753
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:22 IST 2004
+	 ----------------------------------
+source port no : 8000
+destination port no : 33970
+seq number : 1167029934
+ack number : 1156978753
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:22 IST 2004
+	 ----------------------------------
+source port no : 33971
+destination port no : 631
+seq number : 1159873899
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:22 IST 2004
+	 ----------------------------------
+source port no : 33971
+destination port no : 631
+seq number : 1159873899
+ack number : 0
+window size : 32767
+	 ----------------------------------
+Fri Jul 16 20:04:22 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33971
+seq number : 0
+ack number : 1159873900
+window size : 0
+	 ----------------------------------
+Fri Jul 16 20:04:22 IST 2004
+	 ----------------------------------
+source port no : 631
+destination port no : 33971
+seq number : 0
+ack number : 1159873900
+window size : 0
+	 ----------------------------------

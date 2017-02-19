@@ -1,0 +1,747 @@
+
+<!-- saved from url=(0039)http://www.cs.berkeley.edu/~jrs/61bf06/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>CS 61B:  Data Structures - Shewchuk - UC Berkeley</title>
+</head>
+<body bgcolor="ffffff">
+
+<table border="0">
+<tbody><tr valign="top">
+<td>
+<img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/mobile1.jpg" border="0" width="360" height="270">
+</td>
+<td>
+<font size="6" color="900000">CS 61B<br>
+                            Data Structures</font><p>
+
+<a href="http://www.cs.berkeley.edu/~jrs">Prof. Jonathan Shewchuk</a><br>
+jrs@cory.eecs<br>
+(But send class-related mail to cs61b@cory.eecs so
+the TAs can respond too.)<br><br>
+
+Autumn 2006<br>
+Mondays, Wednesdays, and Fridays, 4:00-5:00 pm<br>
+145 Dwinelle Hall<br>
+</p></td>
+</tr></tbody></table>
+<p>
+
+The lower division instructional staff would like you to fill out
+<a href="http://nate.ucdev.org/survey/fa06_cs61b_final.php">this <b>survey</b>
+to help them improve CS 61B</a>.
+As an enticement, everyone who completes the survey by Sunday night
+will receive the equivalent of <b>one bonus lab point</b>.
+It might put you over the edge if you're close to the line.
+</p><p>
+
+The <b>Final Exam</b> will take place on Saturday, December 16,
+from 8 to 11 am at 2050 Valley Life Sciences Building.
+If you are in the <b>Disabled Students' Program</b>, your exam will start
+at the same time in 508 Soda Hall.
+The <b>review session</b> will be Thursday, December 14, from 3 to 6 pm
+in 102 Wurster Hall.
+The final exam will be open book, open notes, closed electronics, as usual.
+</p><p>
+
+You can find <a href="http://www.cs.berkeley.edu/~jrs/61bf06/lec/practice"><b>practice questions</b> here</a>
+(also in <a href="http://www.cs.berkeley.edu/~jrs/61bf06/lec/practice.ps">PostScript</a> and
+<a href="http://www.cs.berkeley.edu/~jrs/61bf06/lec/practice.pdf">PDF</a>).
+The <a href="http://www.cs.berkeley.edu/~jrs/61bf06/lec/practice.sol">answers are available here</a>
+(also in <a href="http://www.cs.berkeley.edu/~jrs/61bf06/lec/practice.sol.ps">PostScript</a> and
+<a href="http://www.cs.berkeley.edu/~jrs/61bf06/lec/practice.sol.pdf">PDF</a>).
+</p><p>
+
+Your TA Michael Le has kindly provided this
+<b><a href="http://www.cs.berkeley.edu/~jrs/61bf06/exam/FinalReview.pdf">Final Exam review sheet</a></b>.
+Your TA Leonard Wei has provided this
+<b><a href="http://www.cs.berkeley.edu/~jrs/61bf06/exam/MT2Review.pdf">Midterm II review sheet</a></b> and
+and <a href="http://www.cs.berkeley.edu/~jrs/61bf06/exam/MT2Solution.pdf">solutions</a>
+for your consideration.
+The <b><a href="http://www.cs.berkeley.edu/~jrs/61bf06/exam/MT1Review.pdf">Midterm I review sheet</a></b>
+and <a href="http://www.cs.berkeley.edu/~jrs/61bf06/exam/MT1Solution.pdf">solutions</a> are also still available.
+</p><p>
+
+The
+<b><a href="http://www.cs.berkeley.edu/~jrs/61bf06/tourny.html">Network Tournament</a></b>
+took place on <b>Monday, December 11</b> from 6-9 pm in 306 Soda Hall.
+
+</p><hr>
+
+<a href="http://java.datastructures.net/">
+<img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/gt4edsmall.jpg" border="0" align="right" width="167" height="207">
+</a>
+<a href="http://www.oreillynet.com/catalog/hfjava2/">
+<img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/hfjava2.s.gif" border="0" align="right" width="180" height="208">
+</a>
+
+<h3>Textbooks</h3>
+
+<ul>
+<li>
+<a href="http://www.javaranch.com/contact.jsp#KathySierra">Kathy Sierra</a> and
+<a href="http://www.javaranch.com/contact.jsp#BertBates">Bert Bates</a>,
+<a href="http://www.oreillynet.com/catalog/hfjava2/"><i>Head First
+Java</i></a>, O'Reilly, 2005.
+ISBN # 0-596-00920-8.  (Either the first or second edition will do.)
+</li><li>
+<a href="http://www.cs.jhu.edu/~goodrich/">Michael T. Goodrich</a> and
+<a href="http://www.cs.brown.edu/people/rt/">Roberto Tamassia</a>,
+<a href="http://java.datastructures.net/">
+<i>Data Structures and Algorithms in Java</i></a>,
+John Wiley &amp; Sons, 2006.  ISBN # 0-471-73884-0.
+(The first, third, or fourth editions will do, but the second edition is
+missing several important data structures.)
+</li><li>
+<b>Warning:</b>  The reading assignments given below apply to
+the second edition of Sierra &amp; Bates,
+and the fourth edition of Goodrich &amp; Tamassia.
+If you have older editions, you'll have to figure out the corresponding
+readings yourself.
+</li></ul>
+
+<h3>Information</h3>
+<ul> 
+<li><a href="http://www.cs.berkeley.edu/~jrs/61bf06/overview.html">Course overview:  prerequisites,
+       laboratory and discussion sections, grading, cheating policies</a>.
+</li><li><a href="http://www.cs.berkeley.edu/~jrs/61bf06/sections.html">Schedule of labs and sections (and their TAs)</a>.
+</li><li><a href="http://www.cs.berkeley.edu/~jrs/61bf06/help.html">Getting help:
+      schedule of instructor and TA office hours and more</a>.
+</li><li>Online version of the <a href="http://www.cs.berkeley.edu/~jrs/61bf06/reader">course reader</a>,
+      plus extra documentation on Java and Gmake.
+</li><li>The Java 2 standard libraries API:
+      <a href="http://java.sun.com/j2se/1.5.0/docs/api/">
+      frames</a>,
+<a href="http://java.sun.com/j2se/1.5.0/docs/api/overview-summary.html">
+      no frames</a> (maintained by <a href="http://java.sun.com/">Sun</a>).
+</li><li>
+<a href="http://java.sun.com/docs/books/jls/third_edition/html/j3TOC.html">
+      The Java language specification</a>
+      (maintained by <a href="http://java.sun.com/">Sun</a>).
+</li><li>
+<a href="http://java.sun.com/j2se/1.5.0/docs/tooldocs/solaris/jdb.html">
+      A brief man page for <tt>jdb</tt>, Sun's Java debugger</a>.
+</li><li>Get <a href="http://upe.cs.berkeley.edu/services/tutoring">tutoring from
+      Upsilon Pi Epsilon</a>, International Honor Society for the
+      Computer Sciences.
+</li><li>Information on
+      <a href="http://www-inst.eecs.berkeley.edu/connecting.html">
+      connecting from home</a>.
+</li><li><a href="http://www-inst.eecs.berkeley.edu/usr/pub/html/Users.Guide">
+      User's Guide to EECS Instructional Computing</a>.
+</li><li>Access the <a href="news://news.berkeley.edu/ucb.class.cs61b"><tt>ucb.class.cs61b</tt></a>
+      newsgroup.  From off campus, use the portal
+      <a href="http://inst.eecs.berkeley.edu/webnews">http://inst.eecs.berkeley.edu/webnews</a>
+      using your class account.
+</li></ul>
+
+<h3>Work</h3>
+<ul>
+<li><a href="http://www.cs.berkeley.edu/~jrs/61bf06/hw">Homeworks and Projects</a>.
+</li><li><a href="http://www.cs.berkeley.edu/~jrs/61bf06/lab">Labs</a>.
+</li><li><a href="http://www.cs.berkeley.edu/~jrs/61bf06/exam">Exams</a>.  Includes sample solutions to midterms in
+    the reader.
+</li></ul>
+
+
+<hr>
+
+<img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/baby4.jpg" border="0" align="left" width="250" height="210">
+
+<h3>Lectures</h3>
+
+The following schedule is tentative.
+There may be changes as the semester progresses,
+so check here periodically.
+<p>
+
+Labs, homeworks, and projects that are currently available can be accessed
+by clicking on them.
+Webcasts and podcasts of past lectures are offered by Berkeley's
+Educational Technology Services through their
+<a href="http://webcast.berkeley.edu/courses/archive.php?seriesid=1906978343">Webcast
+Berkeley page</a>.
+Click on the icons
+<a href="http://webcast.berkeley.edu/courses/archive.php?seriesid=1906978343"><img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv1.gif" border="0" align="middle" width="29" height="22"></a>
+in the schedule below to view past lectures.
+For the streaming webcasts, you will need a Web browser with a
+<a href="http://www.real.com/realone/index.html">RealPlayer plug-in</a>.
+Lectures are not broadcast live, but they should be available within
+a day or two after they happen.
+</p><p>
+
+Some lecture notes can be obtained by clicking on the lecture titles
+(for ASCII) or the PostScript
+<img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/ps.gif" border="0" align="middle" width="22" height="20">
+or PDF
+<img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/pdf.gif" border="0" align="middle" width="33" height="20">
+links (which save paper).
+Please understand that they are <i>lecture notes</i>,
+and that they were written so that I would have something to say in class.
+I write them for <i>me</i>, not <i>you</i>,
+and I make them available as a <i>courtesy</i> to you.
+I edit them after class to make sure
+they say the same thing I said in class.
+If I receive complaints that my lectures and lecture notes do not differ,
+I will stop making lecture notes available.
+For related reasons, I will not make the lecture notes for a class available
+until after the class has taken place.
+<br clear="all">
+
+
+</p><center>
+<table border="2" cellpadding="2">
+
+<tbody><tr>
+<td></td>
+<td><b>Topic</b></td>
+<td><b>Reading</b></td>
+<td><b>Due</b></td>
+</tr>
+
+<tr>
+<td><b>1</b>: August 28</td>
+<td>Course overview
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16145">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv1.gif" border="0" align="top" width="29" height="22"></a>
+    </td>
+<td>Sierra &amp; Bates, pp. 1-9, 18-19, 84</td>
+<td><font color="ffffff">.</font></td>
+</tr>
+
+<tr>
+<td><b>2</b>: August 30</td>
+<td>Using objects
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16146">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv2.gif" border="0" align="top" width="22" height="21"></a>
+    </td>
+<td>S &amp; B, Chapter 2; pp. 54-58, 154-160, 661, 669</td>
+<td><font color="ffffff">.</font></td>
+</tr>
+
+<tr>
+<td><b>3</b>: September 1</td>
+<td>Defining classes
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16147">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv3.gif" border="0" align="top" width="27" height="23"></a>
+    </td>
+<td>S &amp; B, pp. 71-74, 76, 85, 240-249, 273-281, 308-309</td>
+<td><font color="ffffff">.</font></td>
+</tr>
+
+<tr><td></td></tr>
+
+<tr>
+<td><b>September 4</b></td>
+<td><b>Labor Day</b></td>
+<td><font color="ffffff">.</font></td>
+<td><font color="ffffff">.</font></td>
+</tr>
+
+<tr>
+<td><b>4</b>: September 6</td>
+<td>Types; conditionals
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16149">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv4.gif" border="0" align="top" width="27" height="22"></a>
+    </td>
+<td>S &amp; B, pp. 10-14, 49-53, 75, 78-79, 86, 117, 286-287, 292, 660</td>
+<td><a href="http://www.cs.berkeley.edu/~jrs/61bf06/lab/lab1"><font color="007000">Lab 1</font></a></td>
+</tr>
+
+<tr>
+<td><b>5</b>: September 8</td>
+<td>Iteration &amp; arrays I
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16150">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv1.gif" border="0" align="top" width="29" height="22"></a>
+    </td>
+<td>S &amp; B, pp. 59-62, 83, 114-116, 293-300, 670</td>
+<td><a href="http://www.cs.berkeley.edu/~jrs/61bf06/hw/hw1"><font color="9000ff">Homework 1</font></a></td>
+</tr>
+
+<tr><td></td></tr>
+
+<tr>
+<td><b>6</b>: September 11</td>
+<td>Iteration &amp; arrays II
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16151">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv2.gif" border="0" align="top" width="22" height="21"></a>
+    </td>
+<td>S &amp; B, pp. 282-285</td>
+<td><font color="ffffff">.</font></td>
+</tr>
+
+<tr>
+<td><b>7</b>: September 13</td>
+<td>Linked lists I
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16152">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv3.gif" border="0" align="top" width="27" height="23"></a>
+    </td>
+<td>Goodrich &amp; Tamassia, Section 3.2</td>
+<td><a href="http://www.cs.berkeley.edu/~jrs/61bf06/lab/lab2"><font color="007000">Lab 2</font></a></td>
+</tr>
+
+<tr>
+<td><b>8</b>: September 15</td>
+<td>Linked lists II
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16153">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv4.gif" border="0" align="top" width="27" height="22"></a>
+    </td>
+<td>G &amp; T, Section 3.3</td>
+<td><a href="http://www.cs.berkeley.edu/~jrs/61bf06/hw/hw2"><font color="9000ff">Homework 2</font></a></td>
+</tr>
+
+<tr><td></td></tr>
+
+<tr>
+<td><b>9</b>: September 18</td>
+<td>Stack frames
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16154">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv1.gif" border="0" align="top" width="29" height="22"></a>
+    </td>
+<td>Sierra &amp; Bates, pp. 77, 235-239, 258-265, 663</td>
+<td><font color="ffffff">.</font></td>
+</tr>
+
+<tr>
+<td><b>10</b>: September 20</td>
+<td>Testing
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16155">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv2.gif" border="0" align="top" width="22" height="21"></a>
+    </td>
+<td>S &amp; B, pp. 95-109, 662</td>
+<td><a href="http://www.cs.berkeley.edu/~jrs/61bf06/lab/lab3"><font color="007000">Lab 3</font></a></td>
+</tr>
+
+<tr>
+<td><b>11</b>: September 22</td>
+<td>Inheritance
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16156">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv3.gif" border="0" align="top" width="27" height="23"></a>
+    </td>
+<td>S &amp; B, Chapter 7; pp. 28-33, 250-257</td>
+<td><a href="http://www.cs.berkeley.edu/~jrs/61bf06/hw/hw3"><font color="9000ff">Homework 3</font></a></td>
+</tr>
+
+<tr><td></td></tr>
+
+<tr>
+<td><b>12</b>: September 25</td>
+<td>Abstract classes
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16157">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv4.gif" border="0" align="top" width="27" height="22"></a>
+    </td>
+<td>S &amp; B, Chapter 8</td>
+<td><font color="ffffff">.</font></td>
+</tr>
+
+<tr>
+<td><b>13</b>: September 27</td>
+<td>Java packages
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16158">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv1.gif" border="0" align="top" width="29" height="22"></a>
+    </td>
+<td>S &amp; B, pp. 154-160, 587-591, 667-668</td>
+<td><a href="http://www.cs.berkeley.edu/~jrs/61bf06/lab/lab4"><font color="007000">Lab 4</font></a></td>
+</tr>
+
+<tr>
+<td><b>14</b>: September 29</td>
+<td>Exceptions
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16159">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv2.gif" border="0" align="top" width="22" height="21"></a>
+    </td>
+<td>S &amp; B, pp. 315-338</td>
+<td><a href="http://www.cs.berkeley.edu/~jrs/61bf06/hw/pj1"><font color="d09000">Project 1</font></a></td>
+</tr>
+
+<tr><td></td></tr>
+
+<tr>
+<td><b>15</b>: <font color="ff0000">October 2</font></td>
+<td><a href="http://www.cs.berkeley.edu/~jrs/61bf06/exam/06mid1.html"><font color="ff0000">
+    <b>M<small>IDTERM</small> I</b></font></a>
+    </td>
+<td><font color="ff0000">covers Lectures 1-12</font></td>
+<td><font color="ffffff">.</font></td>
+</tr>
+
+<tr>
+<td><b>16</b>: October 4</td>
+<td>More Java
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16161">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv3.gif" border="0" align="top" width="27" height="23"></a>
+    </td>
+<td>S &amp; B, pp. 189, 283</td>
+<td><a href="http://www.cs.berkeley.edu/~jrs/61bf06/lab/lab5"><font color="007000">Lab 5</font></a></td>
+</tr>
+
+<tr>
+<td><b>17</b>: October 6</td>
+<td>Game Trees
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16162">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv4.gif" border="0" align="top" width="27" height="22"></a>
+    </td>
+<td><font color="ffffff">.</font></td>
+<td><a href="http://www.cs.berkeley.edu/~jrs/61bf06/hw/hw4"><font color="9000ff">Homework 4</font></a></td>
+</tr>
+
+<tr><td></td></tr>
+
+<tr>
+<td><b>18</b>: October 9</td>
+<td>Encapsulation
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16163">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv1.gif" border="0" align="top" width="29" height="22"></a>
+    </td>
+<td>S &amp; B, pp. 80-84</td>
+<td><font color="ffffff">.</font></td>
+</tr>
+
+<tr>
+<td><b>19</b>: October 11</td>
+<td>Encapsulated lists
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16164">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv2.gif" border="0" align="top" width="22" height="21"></a>
+    </td>
+<td>S &amp; B, p. 664</td>
+<td><a href="http://www.cs.berkeley.edu/~jrs/61bf06/lab/lab6"><font color="007000">Lab 6</font></a></td>
+</tr>
+
+<tr>
+<td><b>20</b>: October 13</td>
+<td>Asymptotic analysis
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16165">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv3.gif" border="0" align="top" width="27" height="23"></a>
+    </td>
+<td>Goodrich &amp; Tamassia, Chapter 4</td>
+<td><a href="http://www.cs.berkeley.edu/~jrs/61bf06/hw/hw5"><font color="9000ff">Homework 5</font></a></td>
+</tr>
+
+<tr><td></td></tr>
+
+<tr>
+<td><b>21</b>: October 16</td>
+<td>Algorithm analysis
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16166">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv4.gif" border="0" align="top" width="27" height="22"></a>
+    </td>
+<td>G &amp; T, Chapter 4</td>
+<td><font color="ffffff">.</font></td>
+</tr>
+
+<tr>
+<td><b>22</b>: October 18</td>
+<td>Dictionaries &amp; hash tables
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16167">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv1.gif" border="0" align="top" width="29" height="22"></a>
+    </td>
+<td>G &amp; T, Sections 9.1-9.3</td>
+<td><a href="http://www.cs.berkeley.edu/~jrs/61bf06/lab/lab7"><font color="007000">Lab 7</font></a></td>
+</tr>
+
+<tr>
+<td><b>23</b>: October 20</td>
+<td>Hashing; stacks &amp; queues
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16168">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv2.gif" border="0" align="top" width="22" height="21"></a>
+    </td>
+<td>G &amp; T, Chapter 5</td>
+<td><font color="ffffff">.</font></td>
+</tr>
+
+<tr><td></td></tr>
+
+<tr>
+<td><b>24</b>: October 23</td>
+<td>Trees and traversals
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16169">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv3.gif" border="0" align="top" width="27" height="23"></a>
+    </td>
+<td>G &amp; T, Chapter 7</td>
+<td><font color="ffffff">.</font></td>
+</tr>
+
+<tr>
+<td><b>25</b>: October 25</td>
+<td>Priority queues
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16170">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv4.gif" border="0" align="top" width="27" height="22"></a>
+    </td>
+<td>G &amp; T, Sections 8.1-8.3</td>
+<td><a href="http://www.cs.berkeley.edu/~jrs/61bf06/lab/lab8"><font color="007000">Lab 8</font></a></td>
+</tr>
+
+<tr>
+<td><b>26</b>: October 27</td>
+<td>Binary search trees
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16171">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv1.gif" border="0" align="top" width="29" height="22"></a>
+    </td>
+<td>G &amp; T, Section 10.1</td>
+<td><a href="http://www.cs.berkeley.edu/~jrs/61bf06/hw/hw6"><font color="9000ff">Homework 6</font></a></td>
+</tr>
+
+<tr><td></td></tr>
+
+<tr>
+<td><b>27</b>: October 30</td>
+<td>Balanced search trees
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16172">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv2.gif" border="0" align="top" width="22" height="21"></a>
+    </td>
+    
+<td>G &amp; T, Section 10.4</td>
+<td><font color="ffffff">.</font></td>
+</tr>
+
+<tr>
+<td><b>28</b>: November 1</td>
+<td>Graphs
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16173">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv3.gif" border="0" align="top" width="27" height="23"></a>
+    </td>
+<td>G &amp; T, Sections 13.1-13.3</td>
+<td><a href="http://www.cs.berkeley.edu/~jrs/61bf06/lab/lab9"><font color="007000">Lab 9</font></a></td>
+</tr>
+
+<tr>
+<td><b>29</b>: November 3</td>
+<td>Weighted graphs
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16174">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv4.gif" border="0" align="top" width="27" height="22"></a>
+    </td>
+<td>G &amp; T, Sections 13.5, 13.7-13.7.1</td>
+<td><a href="http://www.cs.berkeley.edu/~jrs/61bf06/hw/pj2"><font color="d09000">Project 2</font></a></td>
+</tr>
+
+<tr><td></td></tr>
+
+<tr>
+<td><b>30</b>: November 6</td>
+<td>Four sorting algorithms
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16175">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv1.gif" border="0" align="top" width="29" height="22"></a>
+    </td>
+<td>G &amp; T, Sections 8.2.3, 8.3.5, &amp; 11.1</td>
+<td><font color="ffffff">.</font></td>
+</tr>
+
+<tr>
+<td><b>31</b>: November 8</td>
+<td>Quicksort
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16176">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv2.gif" border="0" align="top" width="22" height="21"></a>
+    </td>
+<td>G &amp; T, Section 11.2</td>
+<td><a href="http://www.cs.berkeley.edu/~jrs/61bf06/lab/lab10"><font color="007000">Lab 10</font></a></td>
+</tr>
+
+<tr>
+<td><b>November 10</b></td>
+<td><b>Veterans Day</b></td>
+<td><font color="ffffff">.</font></td>
+<td><a href="http://www.cs.berkeley.edu/~jrs/61bf06/hw/hw7"><font color="9000ff">Homework 7</font></a></td>
+</tr>
+
+<tr><td></td></tr>
+
+<tr>
+<td><b>32</b>: <font color="ff0000">November 13</font></td>
+<td><a href="http://www.cs.berkeley.edu/~jrs/61bf06/exam/06mid2.html"><font color="ff0000">
+    <font color="ff0000">
+    <b>M<small>IDTERM</small> II</b></font></font></a><font color="ff0000">
+    </font></td>
+<td><font color="ff0000">covers Lectures 1-29</font></td>
+<td><font color="ffffff">.</font></td>
+</tr>
+
+<tr>
+<td><b>33</b>: November 15</td>
+<td>Disjoint Sets
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16179">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv3.gif" border="0" align="top" width="27" height="23"></a>
+    </td>
+<td>G &amp; T, Section 11.6</td>
+<td><a href="http://www.cs.berkeley.edu/~jrs/61bf06/lab/lab11"><font color="007000">Lab 11</font></a></td>
+</tr>
+
+<tr>
+<td><b>34</b>: November 17</td>
+<td>Sorting &amp; selection
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16180">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv4.gif" border="0" align="top" width="27" height="22"></a>
+    </td>
+<td>G &amp; T, Section 11.3 &amp; 11.7</td>
+<td><a href="http://www.cs.berkeley.edu/~jrs/61bf06/hw/hw8"><font color="9000ff">Homework 8</font></a></td>
+</tr>
+
+<tr><td></td></tr>
+
+<tr>
+<td><b>35</b>: November 20</td>
+<td><a href="http://www.youtube.com/watch?v=F3oKjPT5Khg">Sorting video</a>
+    </td>
+<td><font color="ffffff">.</font></td>
+<td><font color="ffffff">.</font></td>
+</tr>
+
+<tr>
+<td><b>36</b>: November 22</td>
+<td>Radix sort
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16182">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv1.gif" border="0" align="top" width="29" height="22"></a>
+    </td>
+<td>G &amp; T, Section 11.4</td>
+<td><font color="ffffff">.</font></td>
+</tr>
+
+<tr>
+<td><b>November 24</b></td>
+<td><b>Thanksgiving</b></td>
+<td><font color="ffffff">.</font></td>
+<td><font color="ffffff">.</font></td>
+</tr>
+
+<tr><td></td></tr>
+
+<tr>
+<td><b>37</b>: November 27</td>
+<td>Splay trees
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16184">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv2.gif" border="0" align="top" width="22" height="21"></a>
+    </td>
+<td>G &amp; T, Section 10.3</td>
+<td><a href="http://www.cs.berkeley.edu/~jrs/61bf06/hw/hw9"><font color="9000ff">Homework 9</font></a></td>
+</tr>
+
+<tr>
+<td><b>38</b>: November 29</td>
+<td>Amortized analysis
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16185">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv3.gif" border="0" align="top" width="27" height="23"></a>
+    </td>
+<td><font color="ffffff">.</font></td>
+<td><a href="http://www.cs.berkeley.edu/~jrs/61bf06/lab/lab12"><font color="007000">Lab 12</font></a></td>
+</tr>
+
+<tr>
+<td><b>39</b>: December 1</td>
+<td>Randomized analysis
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16186">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv4.gif" border="0" align="top" width="27" height="22"></a>
+    </td>
+<td><font color="ffffff">.</font></td>
+<td><a href="http://www.cs.berkeley.edu/~jrs/61bf06/hw/pj3"><font color="d09000">Project 3</font></a></td>
+</tr>
+
+<tr><td></td></tr>
+
+<tr>
+<td><b>40</b>: December 4</td>
+<td>Expression parsing
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16187">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv1.gif" border="0" align="top" width="29" height="22"></a>
+    </td>
+<td><font color="ffffff">.</font></td>
+<td><font color="ffffff">.</font></td>
+</tr>
+
+<tr>
+<td><b>41</b>: December 6</td>
+<td>Garbage collection
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16188">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv2.gif" border="0" align="top" width="22" height="21"></a>
+    </td>
+<td>G &amp; T, Sections 14.1.2-14.1.3</td>
+<td><a href="http://www.cs.berkeley.edu/~jrs/61bf06/lab/lab13"><font color="007000">Lab 13</font></a></td>
+</tr>
+
+<tr>
+<td><b>42</b>: December 8</td>
+<td>Augmenting data structures
+    <a href="http://webcast.berkeley.edu/stream.php?type=real&webcastid=16189">
+    <img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/tv3.gif" border="0" align="top" width="27" height="23"></a>
+    </td>
+<td><font color="ffffff">.</font></td>
+<td><a href="http://www.cs.berkeley.edu/~jrs/61bf06/hw/hw10"><font color="9000ff">Homework 10</font></a></td>
+</tr>
+
+</tbody></table>
+</center>
+<p>
+
+<b>The <font color="ff0000">F<small>INAL</small> E<small>XAM</small></font></b>
+takes place on Saturday, December 16, from 8 to 11 am at
+2050 Valley Life Sciences Building.
+(CS 61B is in Exam Group 13.)
+
+
+</p><hr>
+
+<h3>Course Description <small>(from the catalogue)</small></h3>
+
+Fundamental dynamic data structures, including linear lists, queues, trees, and
+other linked structures; arrays, strings, and hash tables.  Storage management.
+Elementary principles of software engineering.  Abstract data types.
+Algorithms for sorting and searching.  Introduction to the Java programming
+language.
+<p>
+
+Prerequisites:  CS 61A or Engineering 77N.
+(The catalogue says “with a grade of B- or better,”
+but I've never seen this rule enforced.)
+
+
+</p><h3>Grading</h3>
+
+<ul>
+<li>
+<b>5%</b> for the
+<a href="http://www.cs.berkeley.edu/~jrs/61bf06/lab">labs.</a>
+
+</li><li>
+<b>10%</b> for the
+<a href="http://www.cs.berkeley.edu/~jrs/61bf06/hw">homeworks.</a>
+
+</li><li>
+<b>35%</b> for three
+<a href="http://www.cs.berkeley.edu/~jrs/61bf06/hw">projects.</a>
+
+</li><li>
+<b>12.5%</b> for
+<a href="http://www.cs.berkeley.edu/~jrs/61bf06/exam/06mid1.html">Midterm I</a>
+(Monday, October 2, 4-5 pm, 145 Dwinelle Hall).
+
+</li><li>
+<b>12.5%</b> for
+<a href="http://www.cs.berkeley.edu/~jrs/61bf06/exam/06mid2.html">Midterm II</a>
+(Monday, November 13, 4-5 pm, 145 Dwinelle Hall).
+
+</li><li>
+<b>25%</b> for the
+Final Exam
+(Saturday, December 16, 8-11 am, 2050 Valley Life Sciences Building).
+</li></ul>
+
+<hr>
+
+<table width="187" border="0" align="right" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td>
+<img src="./CS 61B  Data Structures - Shewchuk - UC Berkeley-2006_files/mobile2" border="0" align="right" width="187" height="307"><br>
+<span class="caption"><small><b>“Let's see if I remember this.
+Do I splay the pineapple pizza through the Ted Nugent tea cozies?
+Or should I zig-zig the Versace laptops through Christina Aguilera
+first?”
+</b></small></span>
+</td>
+</tr>
+</tbody></table>
+
+<address>
+Mail inquiries to
+<a href="mailto:cs61b@cory.eecs">cs61b@cory.eecs</a>
+</address>
+
+
+
+</body></html>

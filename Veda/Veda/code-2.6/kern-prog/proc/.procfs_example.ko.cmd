@@ -1,0 +1,1 @@
+cmd_/root/Code/kern-prog/proc/procfs_example.ko := ld -m elf_i386 -r -o /root/Code/kern-prog/proc/procfs_example.ko /root/Code/kern-prog/proc/procfs_example.o /root/Code/kern-prog/proc/procfs_example.mod.o
